@@ -4,6 +4,7 @@ import NormalText from "../TextComponents/NormalText";
 import Button from "../Button/Button";
 import Service from "./Service";
 import droneImg from "../../assets/image 14.png";
+import S1 from "../../assets/Vector.png";
 function Services() {
   return (
     <div className="flex flex-col md:flex-row items-center w-full">
@@ -21,21 +22,24 @@ function Services() {
       <div className="w-1/3 flex justify-center items-center">
         <img src={droneImg} alt="drone image" className="w-4/5" />/
       </div>
-      <div className="w-1/3 flex flex-col">
+      <div className="w-1/3 flex flex-col gap-5">
         <Service
           Headtxt="Highly Reliable Shows"
           txt="Through multiple safety layers, AeroDome’s system is completely fail-safe."
-          img=""
+          img={S1}
+          style={"mr-16"}
         />
         <Service
           Headtxt="Dynamic Visualisation"
           txt="Integrating motion dynamics and 3D visualization for an immersive experience."
-          img=""
+          img={S1}
+          style={""}
         />
         <Service
           Headtxt="Precise Picturisation"
           txt="Cutting-Edge GNSS technology for real-life high-quality visualization."
-          img=""
+          img={S1}
+          style={"mr-16"}
         />
       </div>
     </div>
