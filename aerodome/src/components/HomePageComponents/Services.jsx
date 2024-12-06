@@ -6,8 +6,8 @@ import Service from "./Service";
 import droneImg from "../../assets/image 14.png";
 function Services() {
   return (
-    <div className="flex flex-col md:flex-row items-center ">
-      <div className="w-1/3">
+    <div className="flex flex-col md:flex-row items-center w-full">
+      <div className="w-1/3 flex flex-col gap-2">
         <SubHeading txt={"Services"} textColor={"blue"} textCase={true} />
         <Heading txt={"Aerodome"} />
         <NormalText
@@ -21,7 +21,7 @@ function Services() {
       <div className="w-1/3 flex justify-center items-center">
         <img src={droneImg} alt="drone image" className="w-4/5" />/
       </div>
-      <div className="w-1/3">
+      <div className="w-1/3 flex flex-col">
         <Service
           Headtxt="Highly Reliable Shows"
           txt="Through multiple safety layers, AeroDome’s system is completely fail-safe."
