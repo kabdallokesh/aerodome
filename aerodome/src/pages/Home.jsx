@@ -1,10 +1,11 @@
+import Services from "../components/HomePageComponents/Services";
 
 function Home() {
   return (
-    <div>
-      Home
-    </div>
-  )
+    <>
+      <Services />
+    </>
+  );
 }
 
 export default Home;
