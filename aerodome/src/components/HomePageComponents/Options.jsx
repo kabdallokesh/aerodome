@@ -27,36 +27,45 @@ export default function Options() {
   };
 
   return (
-    <div className="w-4/5">
+    <div className="w-4/5 space-y-2">
       {sections.map((section, index) => (
         <div
           key={index}
-          className={`rounded-lg  ${
-            openSection === index ? "bg-blue-600 " : ""
+          className={`rounded-lg overflow-hidden transition-all duration-1000 ${
+            openSection === index ? "bg-blue-600" : "bg-transparent"
           }`}
         >
           <button
             onClick={() => toggleSection(index)}
-            className="flex items-center w-full p-4  text-left gap-3"
+            className="flex items-center w-full p-4 text-left gap-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 "
+            aria-expanded={openSection === index}
+            aria-controls={`section-${index}`}
           >
-            {openSection === index ? (
-              <Minus className="h-5 w-5 text-white bg-transparent" />
-            ) : (
-              <Plus className="h-5 w-5 text-white bg-transparent" />
-            )}
-            <span
-              className={`font-medium bg-transparent text-xl ${
-                openSection === index ? "text-white" : "text-white"
-              }`}
-            >
+            <div className="transition-transform duration-500 ease-in-out bg-transparent">
+              {openSection === index ? (
+                <Minus className="h-5 w-5 text-white bg-transparent" />
+              ) : (
+                <Plus className="h-5 w-5 text-white bg-transparent" />
+              )}
+            </div>
+            <span className="font-medium text-xl text-white bg-transparent">
               {section.title}
             </span>
           </button>
-          {openSection === index && (
-            <div className="px-4 pb-4 text-md rounded-br-lg rounded-bl-lg text-white bg-blue-600 ">
+          <div
+            id={`section-${index}`}
+            className={`overflow-hidden transition-all duration-1000  ease-in-out ${
+              openSection === index ? "max-h-40 " : "max-h-0"
+            }`}
+          >
+            <div
+              className={`px-4 pb-4 text-md text-white transition-all duration-1000 bg-blue-600 ${
+                openSection === index ? "" : "bg-transparent text-transparent"
+              }`}
+            >
               {section.content}
             </div>
-          )}
+          </div>
         </div>
       ))}
     </div>

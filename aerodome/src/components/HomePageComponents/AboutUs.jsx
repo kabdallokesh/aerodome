@@ -72,7 +72,7 @@ function AboutUs() {
             <img src={backer3} className="w-1/5 h-20  mx-auto bg-transparent" />
             <img src={backer4} className="w-1/5 h-14  mx-auto bg-transparent" />
           </div>
-          <Button txt={"Contact Us"} />
+          <Button txt={"Contact Us"} link={""} />
         </div>
       </div>
     </div>

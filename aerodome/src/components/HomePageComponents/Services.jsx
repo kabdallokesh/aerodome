@@ -17,7 +17,9 @@ function Services() {
           }
         />
 
-        <Button txt={"Get Quota"} link={""} />
+        <div className="mt-5">
+          <Button txt={"Get Quota"} link={""} />
+        </div>
       </div>
       <div className="w-1/3 flex justify-center items-center">
         <img src={droneImg} alt="drone image" className="w-4/5" />/
