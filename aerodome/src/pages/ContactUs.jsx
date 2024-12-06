@@ -1,8 +1,8 @@
 
 function ContactUs() {
   return (
-    <div>
-      COntact Us
+    <div className="">
+     hi
     </div>
   )
 }
