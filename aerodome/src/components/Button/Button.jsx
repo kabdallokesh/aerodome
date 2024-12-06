@@ -1,13 +1,15 @@
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-
-import PropTypes from 'prop-types';
-
-function Button({txt,link}) {
+function Button({ txt, link }) {
   return (
-    <a href={link}>
+    <Link
+      className="text-white/90 bg-blue-600 p-2 px-5 text-lg font-semibold rounded-3xl"
+      to={link}
+    >
       {txt}
-    </a>
-  )
+    </Link>
+  );
 }
 
 Button.propTypes = {
@@ -15,4 +17,4 @@ Button.propTypes = {
   link: PropTypes.string.isRequired,
 };
 
-export default Button
+export default Button;
