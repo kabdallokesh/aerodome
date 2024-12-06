@@ -1,7 +1,7 @@
 
 function NormalText({txt}) {
   return (
-    <p>
+    <p className='text-white/80'>
       {txt}
     </p>
   )

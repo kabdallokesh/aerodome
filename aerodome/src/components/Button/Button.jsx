@@ -2,16 +2,17 @@
 
 import PropTypes from 'prop-types';
 
-function Button({txt}) {
+function Button({txt,link}) {
   return (
-    <div>
+    <a href={link}>
       {txt}
-    </div>
+    </a>
   )
 }
 
 Button.propTypes = {
   txt: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default Button
