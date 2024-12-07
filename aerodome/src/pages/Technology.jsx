@@ -23,7 +23,7 @@ function Technology() {
   };
 
   return (
-    <div className="px-4 sm:px-6 md:px-16 lg:px-20 pt-10 items-center flex flex-col overflow-x-hidden">
+    <div className="px-4 sm:px-6 md:px-16 lg:px-20 pt-10 items-center flex flex-col overflow-x-hidden overflow-y-clip">
       {/* Header Section */}
       <motion.div
         className="w-full md:w-2/3 lg:w-[70%] items-center flex flex-col gap-4 text-center"
@@ -112,7 +112,7 @@ function Technology() {
             textStyle={"text-center md:text-start"}
           />
         </div>
-        <div className="w-full pt-4">
+        <div className="w-full pt-4 overflow-x-hidden">
           <InfiniteImageSlider />
         </div>
       </motion.div>
