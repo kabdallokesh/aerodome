@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
-import { Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -66,17 +66,17 @@ function Navbar() {
             >
               Technology
             </Link>
-            <Link
+            {/* <Link
               to="/contact-us"
               className={`cursor-pointer ${
                 currentPage === "/contact-us" && "text-[#2563EB]"
               }`}
             >
-              Contact
-            </Link>
+              Contact Us
+            </Link> */}
           </div>
-          <Button txt="Get Quota" link="https://ok.com" />
-          <Sun className="cursor-pointer" />
+          <Button txt=" Contact Us" link="/contact-us" />
+          {/* <Sun className="cursor-pointer" /> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -116,16 +116,16 @@ function Navbar() {
           >
             Technology
           </Link>
-          <Link
+          {/* <Link
             to="/contact-us"
             className={`cursor-pointer text-[16px] ${
               currentPage === "/contact-us" && "text-[#2563EB]"
             }`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Contact
-          </Link>
-          <Button txt="Get Quota" link="https://ok.com" />
+            Contact Us
+          </Link> */}
+          <Button txt=" Contact Us" link="/contact-us" />
         </div>
       )}
     </div>

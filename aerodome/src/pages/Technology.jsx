@@ -9,21 +9,21 @@ function Technology() {
   // Animation Variants for Framer Motion
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   const fadeInFromLeft = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 
   const fadeInFromRight = {
     hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
   };
 
   return (
-    <div className="px-4 sm:px-6 md:px-16 lg:px-20 pt-10 items-center flex flex-col">
+    <div className="px-4 sm:px-6 md:px-16 lg:px-20 pt-10 items-center flex flex-col overflow-x-hidden">
       {/* Header Section */}
       <motion.div
         className="w-full md:w-2/3 lg:w-[70%] items-center flex flex-col gap-4 text-center"
@@ -37,7 +37,11 @@ function Technology() {
 
       {/* Technology Section */}
       <div className="md:p-8 p-4">
-        <motion.div initial="hidden" whileInView="visible" variants={fadeInFromLeft}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInFromLeft}
+        >
           <CardLeft
             number="1"
             imageSrc="https://via.placeholder.com/480x290"
@@ -48,7 +52,11 @@ function Technology() {
           />
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" variants={fadeInFromRight}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInFromRight}
+        >
           <CardRight
             number="2"
             imageSrc="https://via.placeholder.com/480x290"
@@ -59,7 +67,11 @@ function Technology() {
           />
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" variants={fadeInFromLeft}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInFromLeft}
+        >
           <CardLeft
             number="3"
             imageSrc="https://via.placeholder.com/480x290"
@@ -70,7 +82,11 @@ function Technology() {
           />
         </motion.div>
 
-        <motion.div initial="hidden" whileInView="visible" variants={fadeInFromRight}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInFromRight}
+        >
           <CardRight
             number="4"
             imageSrc="https://via.placeholder.com/480x290"
@@ -89,9 +105,12 @@ function Technology() {
         whileInView="visible"
         variants={fadeIn}
       >
-        <div className="w-full md:w-2/3 lg:w-[85%] flex flex-col gap-4">
+        <div className="w-full md:w-2/3 lg:w-[85%] flex flex-col gap-2 items-center md:items-start">
           <SubHeading txt={"showcase"} textColor={"blue"} textCase={true} />
-          <Heading txt={"Swarn Technology"} />
+          <Heading
+            txt={"Swarn Technology"}
+            textStyle={"text-center md:text-start"}
+          />
         </div>
         <div className="w-full pt-4">
           <InfiniteImageSlider />

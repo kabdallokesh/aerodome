@@ -1,0 +1,34 @@
+:root {
+  --total-brand: 7;
+  --logo-width: 27rem;
+  --total-logo-width: calc(var(--total-brand) * var(--logo-width) * 2);
+}
+
+.slider {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slider ul.brands {
+  list-style: none;
+  width: var(--total-logo-width);
+  display: flex;
+  animation: slideleft 14s linear infinite;
+}
+
+@keyframes slideleft {
+  100% {
+    transform: translateX(calc(-100% / 2));
+  }
+}
+
+ul.brands li.brand-logo {
+  width: var(--logo-width);
+  margin-left: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

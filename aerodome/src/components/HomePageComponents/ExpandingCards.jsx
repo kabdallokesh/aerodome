@@ -14,8 +14,8 @@ const ExpandingCards = ({ data }) => {
       x: 0,
       transition: {
         duration: 1,
-        delayChildren: 0.5,
-        staggerChildren: 0.2,
+        delayChildren: 0.4,
+        staggerChildren: 0.1,
       },
     },
   };

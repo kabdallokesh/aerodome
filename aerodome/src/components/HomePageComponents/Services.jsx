@@ -11,11 +11,7 @@ function Services() {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-
-  const fadeInFromLeft = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  };
+ 
   return (
     <div id="service" className="flex flex-col md:flex-row items-center w-full">
       <div className="w-full md:w-1/3 flex flex-col gap-2 items-center md:items-start">

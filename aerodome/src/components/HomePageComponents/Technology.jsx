@@ -1,17 +1,16 @@
 import Heading from "../TextComponents/Heading";
 import SubHeading from "../TextComponents/SubHeading";
-import img1 from "../../assets/image3.png";
-import img2 from "../../assets/image3.png";
-import img3 from "../../assets/image3.png";
-import img4 from "../../assets/image3.png";
-import img5 from "../../assets/image3.png";
-import img6 from "../../assets/image3.png";
-import img7 from "../../assets/image3.png";
 import NormalText from "../TextComponents/NormalText";
 import Button from "../Button/Button";
+import InfiniteImageGallery from "../ImageGallery/ImageGallery";
+import { motion } from "framer-motion";
 function Technology() {
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <div className="w-full flex flex-col items-center md:items-start">
         <SubHeading
           txt={"showcase"}
@@ -24,25 +23,27 @@ function Technology() {
           textStyle={"text-center md:text-left"}
         />
       </div>
-      <div className="flex flex-col overflow-hidden gap-5 mt-8 h-full">
-        <div className="flex gap-10 md:-ml-24">
-          <img src={img3} alt="" className="w-1/4 h-56 rounded-lg" />
-          <img src={img2} alt="" className="w-1/4 h-56 rounded-lg" />
-          <img src={img4} alt="" className="w-1/4 h-56 rounded-lg" />
-          <img src={img1} alt="" className="w-1/4 h-56 rounded-lg" />
-        </div>
-        <div className="flex gap-10 -ml-72 h-full">
-          <img src={img5} alt="" className="w-1/4 h-56 rounded-lg" />
-          <img src={img6} alt="" className="w-1/4 h-56 rounded-lg" />
-          <img src={img7} alt="" className="w-1/4 h-56 rounded-lg" />
-          <div className="w-1/4 rounded-lg h-56 bg-white/90 p-10 flex flex-col gap-5">
+      <div className="flex flex-col  gap-5 mt-8 h-full mb-[80%] md:mb-0 ">
+        <InfiniteImageGallery />
+        <div className="flex gap-10 md:-ml-32 relative h-full">
+          <InfiniteImageGallery />
+          <div
+            className="md:w-1/4 
+          rounded-lg md:rounded-none md:rounded-tl-lg md:rounded-bl-lg h-56 bg-white p-10 flex flex-col gap-5 absolute md:right-0 md:top-0 top-[110%] items-center"
+          >
             <NormalText
               txt={
                 "We use state-of-the-art drone technology and modules to create seamless, high-performance solutions."
               }
-              txtStyle={"text-black/90"}
+              txtStyle={"text-black/90 text-center"}
             />
-            <Button txt="More Details" />
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeIn}
+            >
+              <Button txt="More Details" link="/technology" />
+            </motion.div>
           </div>
         </div>
       </div>
