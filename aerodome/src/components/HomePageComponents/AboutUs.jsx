@@ -38,7 +38,7 @@ function AboutUs() {
 
   return (
     <div className="">
-      <div className="flex rounded-3xl bg-gray-300/5 p-10">
+      <div className="flex rounded-3xl bg-gray-300/5 p-16 px-20">
         <div className="w-1/2 bg-transparent">
           <SubHeading
             txt={"ABOUT US"}

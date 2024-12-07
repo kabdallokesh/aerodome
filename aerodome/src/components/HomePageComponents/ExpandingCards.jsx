@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./style.css";
 
 const ExpandingCards = ({ data }) => {
-  const [activeId, setActiveId] = React.useState(1);
+  const [activeId, setActiveId] = React.useState(3);
 
   const onClick = (id) => setActiveId(id);
 

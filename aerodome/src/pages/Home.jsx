@@ -1,5 +1,6 @@
 import AboutUs from "../components/HomePageComponents/AboutUs";
 import Services from "../components/HomePageComponents/Services";
+import Technology from "../components/HomePageComponents/Technology";
 import WhyChooseUs from "../components/HomePageComponents/WhyChooseUs";
 
 function Home() {
@@ -9,6 +10,7 @@ function Home() {
       <Services />
       <WhyChooseUs />
       <AboutUs />
+      <Technology />
       <div></div>
     </div>
   );
