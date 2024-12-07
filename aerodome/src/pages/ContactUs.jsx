@@ -177,47 +177,43 @@ function ContactUs() {
                   </p>
                 </div>
               </div>
-{/* Social Links */}
-<div className="flex items-center gap-4">
-  <h3 className="text-[18px] sm:text-[20px] text-white font-semibold">
-    Connect with us:
-  </h3>
-  <div className="flex items-center gap-4">
-    <a
-      href="#"
-      aria-label="Instagram"
-      className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
-    >
-      <InstagramIcon className="w-5 h-5" />
-    </a>
-    <a
-      href="#"
-      aria-label="Twitter"
-      className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
-    >
-      <TwitterIcon className="w-5 h-5" />
-    </a>
-    <a
-      href="#"
-      aria-label="YouTube"
-      className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
-    >
-      <YoutubeIcon className="w-5 h-5" />
-    </a>
-    <a
-      href="#"
-      aria-label="LinkedIn"
-      className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
-    >
-      <LinkedinIcon className="w-5 h-5" />
-    </a>
-  </div>
-</div>
-
+              {/* Social Links */}
+              <div className="flex items-center gap-4">
+                <h3 className="text-[18px] sm:text-[20px] text-white font-semibold">
+                  Connect with us:
+                </h3>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="#"
+                    aria-label="Instagram"
+                    className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
+                  >
+                    <InstagramIcon className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="#"
+                    aria-label="Twitter"
+                    className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
+                  >
+                    <TwitterIcon className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="#"
+                    aria-label="YouTube"
+                    className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
+                  >
+                    <YoutubeIcon className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="#"
+                    aria-label="LinkedIn"
+                    className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
+                  >
+                    <LinkedinIcon className="w-5 h-5" />
+                  </a>
+                </div>
+              </div>
             </motion.div>
-
-
-            
 
             {/* Right Column - Contact Form */}
             <motion.form

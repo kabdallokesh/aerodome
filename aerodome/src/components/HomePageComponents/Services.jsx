@@ -7,7 +7,7 @@ import droneImg from "../../assets/image 14.png";
 import S1 from "../../assets/Vector.png";
 function Services() {
   return (
-    <div className="flex flex-col md:flex-row items-center w-full">
+    <div id="service" className="flex flex-col md:flex-row items-center w-full">
       <div className="w-1/3 flex flex-col gap-2">
         <SubHeading txt={"Services"} textColor={"blue"} textCase={true} />
         <Heading txt={"Aerodome"} />

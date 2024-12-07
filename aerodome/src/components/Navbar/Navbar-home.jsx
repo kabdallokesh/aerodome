@@ -12,8 +12,8 @@ function Navbar() {
   const currentPage = location.pathname;
 
   return (
-    <div className="w-full h-[13vh] flex justify-center z-[100] sticky bg-[#0F0F0F] top-0 items-center">
-      <div className="h-[12vh] flex items-center font-bold justify-between bg-[#0F0F0F] text-white px-4 w-[95%] md:w-[92%]">
+    <div className="w-full h-[13vh] flex justify-center z-[100] sticky top-0 items-center">
+      <div className="h-[12vh] flex items-center font-bold justify-between  text-white px-4 w-[95%] md:w-[92%]">
         {/* Logo */}
         <div>
           <img src="logo.png" className="w-[70%] md:w-[50%]" alt="logo" />
