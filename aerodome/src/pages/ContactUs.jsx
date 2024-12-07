@@ -164,13 +164,13 @@ function ContactUs() {
 
               {/* Address Section */}
               <div className="flex items-start gap-4">
-                <MapPinHouse className="w-7 text-white rounded-full p-1 h-7 mt-1 bg-blue-500" />
+                <MapPinHouse className="w-8 text-white rounded-full p-1 h-8 mt-1 bg-blue-500" />
                 <div>
                   <h3 className="font-medium text-[18px] sm:text-[20px] mb-1">
                     Address
                   </h3>
-                  <p className="text-white text-[14px] sm:text-[16px] flex gap-2 items-center">
-                    <MapPin className="w-4 h-4" />
+                  <p className="text-white text-[14px] sm:text-[16px] flex gap-2 ">
+                    <MapPin className="w-4 h-4 mt-1 md:mt-2" />
                     1st Floor, SSN iFound, SSN College of Engineering,
                     <br />
                     Thiruporur, Kalavakkam, Chennai, Tamil Nadu 603110
@@ -178,7 +178,7 @@ function ContactUs() {
                 </div>
               </div>
               {/* Social Links */}
-              <div className="flex items-center gap-4">
+              <div className="flex flex-col md:flex-row items-center gap-4">
                 <h3 className="text-[18px] sm:text-[20px] text-white font-semibold">
                   Connect with us:
                 </h3>
