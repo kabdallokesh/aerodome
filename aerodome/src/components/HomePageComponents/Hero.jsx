@@ -22,8 +22,8 @@ function HeroSection() {
   };
 
   return (
-    <div className="relative z-[200] w-full h-[100vh] mb-16 bg-black">
-      <Navbar />
+    <div className="relative w-full h-[100vh] mb-16 bg-black">
+      {/* <Navbar /> */}
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -35,7 +35,7 @@ function HeroSection() {
         <div className="absolute inset-0 bg-black opacity-60"></div>
         {/* Grid Overlay */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 -top-48"
           style={{
             backgroundImage: "url('grid.png')", // Replace with the actual grid image path
             backgroundRepeat: "repeat",
@@ -46,7 +46,7 @@ function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-[20vh] items-center text-white px-6">
+      <div className="relative z-10 h-full flex flex-col justify-end pb-[20vh] md:pb-[14vh] items-center text-white px-6">
         <motion.div
           className="text-center flex justify-center items-center gap-6"
           variants={containerVariant}
@@ -55,7 +55,7 @@ function HeroSection() {
         >
           {/* Heading */}
           <motion.h1
-            className="text-[96px] font-bold leading-tight"
+            className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight"
             variants={childVariant}
           >
             Crafting Stories
@@ -63,7 +63,7 @@ function HeroSection() {
           {/* CTA */}
           <motion.a
             href="#service"
-            className="text-[20px] mt-4 underline font-medium"
+            className="text-sm md:text-lg mt-4 underline font-medium"
             variants={childVariant}
           >
             CHECK OUT OUR SERVICE
@@ -79,14 +79,14 @@ function HeroSection() {
           {/* Scroll Down Text */}
           <motion.a
             href="#"
-            className="text-[20px] mt-4 text-right leading-tight font-medium"
+            className="text-sm md:text-lg mt-4 text-right leading-tight font-medium"
             variants={childVariant}
           >
             SCROLL DOWN <br /> TO CHECK MORE
           </motion.a>
           {/* Subheading */}
           <motion.h1
-            className="text-[96px] leading-tight font-bold"
+            className="text-6xl md:text-7xl lg:text-8xl leading-tight font-bold"
             variants={childVariant}
           >
             In The Sky

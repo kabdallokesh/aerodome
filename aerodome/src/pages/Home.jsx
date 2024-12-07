@@ -7,9 +7,9 @@ import WhyChooseUs from "../components/HomePageComponents/WhyChooseUs";
 function Home() {
   return (
     <div>
-      {/* <div className="w-full z-[300] mt-[-13vh]">
+      <div id="hero-section" className="w-full z-[300] mt-[-13vh]">
         <HeroSection />
-      </div> */}
+      </div>
       <div className="px-8 md:px-14 lg:px-20 flex flex-col gap-16">
         <Services />
         <WhyChooseUs />
@@ -21,3 +21,4 @@ function Home() {
 }
 
 export default Home;
+
