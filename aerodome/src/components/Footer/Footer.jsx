@@ -54,7 +54,7 @@ function Footer() {
 
       {/* Footer Text */}
       <div className="text-white pt-4 text-center text-[12px] sm:text-[14px]">
-        <p>©️2024 Aerodome || Made with 💖 By Team ECell</p>
+        <p>©️2024 Aerodome || Made with 💖 By SSP E-Cell KIET</p>
       </div>
     </div>
   );
