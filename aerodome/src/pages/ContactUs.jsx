@@ -15,7 +15,7 @@ import Heading from "../components/TextComponents/Heading";
 import SubHeading from "../components/TextComponents/SubHeading";
 import { useState } from "react";
 import { motion } from "framer-motion"; // Import framer-motion for animations
-import axios from "axios";
+import emailjs from "@emailjs/browser"; // Import EmailJS
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -26,6 +26,9 @@ function ContactUs() {
     message: "",
   });
 
+  const [isSending, setIsSending] = useState(false);
+  const [sent, setSent] = useState(false);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -34,58 +37,50 @@ function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    setIsSending(true);
+
+    // EmailJS configuration
+    const serviceID = ""; // Replace with your EmailJS service ID
+    const templateID = ""; // Replace with your EmailJS template ID
+    const userID = ""; // Replace with your EmailJS user ID
+
     try {
-      const response = await axios.post(
-        "https://api.sendgrid.com/v3/mail/send",
+      await emailjs.send(
+        serviceID,
+        templateID,
         {
-          personalizations: [
-            {
-              to: [{ email: "your-email@example.com" }], // Replace with your recipient email
-              subject: `New Contact Us Message from ${formData.firstName} ${formData.lastName}`,
-            },
-          ],
-          from: {
-            email: "your-sendgrid-verified-email@example.com", // Replace with your SendGrid verified email
-          },
-          content: [
-            {
-              type: "text/html",
-              value: `
-                <div>
-                  <h2>New Contact Request</h2>
-                  <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
-                  <p><strong>Email:</strong> ${formData.email}</p>
-                  <p><strong>Phone:</strong> ${formData.phone}</p>
-                  <p><strong>Message:</strong> ${formData.message}</p>
-                </div>
-              `,
-            },
-          ],
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          phone: formData.phone || "N/A",
+          message: formData.message,
         },
-        {
-          headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_SENDGRID_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-        }
+        userID
       );
 
-      if (response.status === 202) {
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
-      } else {
-        throw new Error("Failed to send email.");
-      }
+      setSent(true) 
+       setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error sending email:", error);
+      alert("An error occurred while sending your message. Please try again later.");
+    } finally {
+      setIsSending(false);
     }
   };
 
+  
   // Animation Variants for Framer Motion
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
@@ -273,9 +268,8 @@ function ContactUs() {
               />
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors"
-              >
-                Send Message
+                className={`w-full bg-blue-600 ${sent === true && "disabled"}hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors`}  >
+                {sent === true ? "Message Sent Successfully":"Send Message"}
               </button>
             </motion.form>
           </div>
