@@ -28,11 +28,11 @@ function Navbar() {
 
   return (
     <div
-      className={`w-full h-[13vh] flex justify-center z-[100] sticky top-0 items-center transition-colors duration-300 ${
+      className={`w-full h-[10vh] md:h-[12vh] flex justify-center z-[100] sticky top-0 items-center transition-colors duration-300 ${
         isScrolled ? "bg-[#0F0F0F]" : "bg-transparent"
       }`}
     >
-      <div className="h-[12vh] flex items-center font-bold justify-between px-4 w-[95%] md:w-[92%]">
+      <div className="h-[8vh] md:h-[10vh] flex items-center font-bold justify-between px-4 w-[95%] md:w-[92%]">
         {/* Logo */}
         <Link to={"/"}>
           <img
@@ -97,7 +97,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[12vh] left-0 w-full bg-[#0F0F0F] z-[100] text-white flex flex-col p-12 gap-6 py-6 shadow-lg transition-transform duration-300">
+        <div className="absolute top-[12vh] left-0 w-full bg-[#0F0F0F] z-[100] text-white flex flex-col px-12 gap-6 py-3 shadow-lg transition-transform duration-300">
           <Link
             to="/"
             className={`cursor-pointer text-[16px] ${
