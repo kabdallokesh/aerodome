@@ -10,7 +10,7 @@ function Technology() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden overflow-y-clip">
       <div className="w-full flex flex-col items-center md:items-start">
         <SubHeading
           txt={"showcase"}
