@@ -27,7 +27,7 @@ export default function Options() {
   };
 
   return (
-    <div className="w-4/5 space-y-2">
+    <div className="mt-3 md:mt-0 md:w-4/5 space-y-2">
       {sections.map((section, index) => (
         <div
           key={index}

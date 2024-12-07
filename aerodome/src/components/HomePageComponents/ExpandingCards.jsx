@@ -8,7 +8,7 @@ const ExpandingCards = ({ data }) => {
   const onClick = (id) => setActiveId(id);
 
   return (
-    <div className="container w-full px-16 mt-10 bg-transparent">
+    <div className="container w-full px-20 md:px-16 my-10 bg-transparent">
       {data.map((card) => (
         <div
           key={card.id}

@@ -2,7 +2,9 @@ import PropTypes from "prop-types";
 
 function Heading({ txt, textStyle }) {
   return (
-    <h2 className={`text-5xl font-bold text-white/90 ${textStyle}`}>{txt}</h2>
+    <h2 className={`text-5xl font-bold text-white/90 ${textStyle} w-full`}>
+      {txt}
+    </h2>
   );
 }
 

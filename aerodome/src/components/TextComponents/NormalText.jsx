@@ -1,5 +1,5 @@
 function NormalText({ txt, txtStyle }) {
-  return <p className={`text-white/80 ${txtStyle}`}>{txt}</p>;
+  return <p className={`${txtStyle}`}>{txt}</p>;
 }
 
 import PropTypes from "prop-types";

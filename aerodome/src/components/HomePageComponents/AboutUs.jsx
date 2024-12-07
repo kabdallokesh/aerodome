@@ -38,39 +38,51 @@ function AboutUs() {
 
   return (
     <div className="">
-      <div className="flex rounded-3xl bg-gray-300/5 p-16 px-20">
-        <div className="w-1/2 bg-transparent">
+      <div className="flex flex-col md:flex-row rounded-3xl bg-gray-300/5 p-5 md:p-16 md:px-20">
+        <div className="w-full md:w-1/2 bg-transparent flex flex-col items-center md:items-start">
           <SubHeading
             txt={"ABOUT US"}
             textCase={true}
             textColor={"blue"}
-            textStyle={"bg-transparent"}
+            textStyle={""}
           />
-          <Heading txt={"How it Started"} textStyle={"bg-transparent"} />
+          <Heading
+            txt={"How it Started"}
+            textStyle={"text-center md:text-left"}
+          />
           <ExpandingCard data={cardsData} />
         </div>
-        <div className="w-1/2 bg-transparent">
+        <div className="md:w-1/2 flex flex-col items-center md:items-start">
           <NormalText
             txt={
               "AeroDome, founded in 2023 by three IIT Madras alumni, emerged from their core involvement with Avishkar Hyperloop—a student team that secured $1.25M funding from the Railway Ministry and corporates and ranked among the global top three in hyperloop development. "
             }
-            txtStyle={"bg-transparent"}
+            txtStyle={"text-white/60 text-center md:text-left"}
           />
           <NormalText
             txt={
               "Based in Chennai, we are an NSRCEL, IIM Bangalore-incubated startup, supported by top incubators like Deshpande Startups and VELTECH TBI, with guidance from industry experts and mentors."
             }
-            txtStyle={"mt-3 bg-transparent"}
+            txtStyle={"mt-3  text-white/60  text-center md:text-left"}
           />
           <div className="bg-white/90 flex rounded-lg p-3 mt-5 items-center justify-center mb-8">
             <img
               src={backer1}
               alt="nsrcel logo"
-              className="w-1/5 h-14 mx-auto bg-transparent"
+              className="w-1/5 h-10 md:h-14 mx-auto bg-transparent"
             />
-            <img src={backer2} className="w-1/5 h-14  mx-auto bg-transparent" />
-            <img src={backer3} className="w-1/5 h-20  mx-auto bg-transparent" />
-            <img src={backer4} className="w-1/5 h-14  mx-auto bg-transparent" />
+            <img
+              src={backer2}
+              className="w-1/5 h-10 md:h-14  mx-auto bg-transparent"
+            />
+            <img
+              src={backer3}
+              className="w-1/5 h-10 md:h-20  mx-auto bg-transparent"
+            />
+            <img
+              src={backer4}
+              className="w-1/5 h-10 md:h-14  mx-auto bg-transparent"
+            />
           </div>
           <Button txt={"Contact Us"} link={""} />
         </div>
