@@ -1,6 +1,6 @@
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 export default function Options() {
   const [openSection, setOpenSection] = useState(1);
 
@@ -26,10 +26,18 @@ export default function Options() {
     setOpenSection(openSection === index ? null : index);
   };
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className="mt-3 md:mt-0 md:w-4/5 space-y-2">
       {sections.map((section, index) => (
-        <div
+        <motion.div
+          initial="hidden"
+          variants={fadeIn}
+          whileInView={"visible"}
           key={index}
           className={`rounded-lg overflow-hidden transition-all duration-1000 ${
             openSection === index ? "bg-blue-600" : "bg-transparent"
@@ -66,7 +74,7 @@ export default function Options() {
               {section.content}
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

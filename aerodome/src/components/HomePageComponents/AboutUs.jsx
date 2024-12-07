@@ -7,6 +7,7 @@ import backer1 from "../../assets/Backers/Media Kit_DS Full whitte 1.png";
 import backer2 from "../../assets/Backers/NSRCEL Main logo.png";
 import backer3 from "../../assets/Backers/SSN iFound Logo transparent blue.png";
 import backer4 from "../../assets/Backers/Veltech.jpeg";
+import { motion } from "framer-motion";
 function AboutUs() {
   const cardsData = [
     {
@@ -36,9 +37,14 @@ function AboutUs() {
     },
   ];
 
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <div className="">
-      <div className="flex flex-col md:flex-row rounded-3xl bg-gray-300/5 p-5 md:p-16 md:px-20">
+      <div className="flex flex-col md:flex-row rounded-3xl bg-gray-300/5 px-5 py-10 md:py-16 md:px-20">
         <div className="w-full md:w-1/2 bg-transparent flex flex-col items-center md:items-start">
           <SubHeading
             txt={"ABOUT US"}
@@ -65,7 +71,12 @@ function AboutUs() {
             }
             txtStyle={"mt-3  text-white/60  text-center md:text-left"}
           />
-          <div className="bg-white/90 flex rounded-lg p-3 mt-5 items-center justify-center mb-8">
+          <motion.div
+            initial="hidden"
+            variants={fadeIn}
+            whileInView={"visible"}
+            className="bg-white/90 flex rounded-lg p-3 mt-5 items-center justify-center mb-8"
+          >
             <img
               src={backer1}
               alt="nsrcel logo"
@@ -83,8 +94,14 @@ function AboutUs() {
               src={backer4}
               className="w-1/5 h-10 md:h-14  mx-auto bg-transparent"
             />
-          </div>
-          <Button txt={"Contact Us"} link={""} />
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            variants={fadeIn}
+            whileInView={"visible"}
+          >
+            <Button txt={"Contact Us"} link={"/contact-us"} />
+          </motion.div>
         </div>
       </div>
     </div>

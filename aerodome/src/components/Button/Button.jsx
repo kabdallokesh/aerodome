@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
 function Button({ txt, link }) {
   return (
     <Link
