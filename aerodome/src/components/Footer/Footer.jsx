@@ -59,7 +59,7 @@ function Footer() {
 
       {/* Footer Text */}
       <div className="text-white pt-4 text-center text-[12px] sm:text-[14px]">
-        <p>©️2024 Aerodome || All Right Reserved</p>
+        <p>©️2024 AeroDome || All Right Reserved</p>
       </div>
     </div>
   );
