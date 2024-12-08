@@ -22,7 +22,7 @@ function Service({ Headtxt, txt, img, style, orderOne, orderTwo }) {
         whileInView={"visible"}
         className={`flex justify-center items-center bg-blue-600 rounded-full h-10 w-12 ${orderTwo}`}
       >
-        <img src={img} alt="service" className="m-5 h-5 w-6 bg-blue-600" />
+        <img src={img} alt="service" className="m-5 h-7 w-7 bg-blue-600" />
       </motion.div>
     </div>
   );

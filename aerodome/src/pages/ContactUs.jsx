@@ -38,7 +38,12 @@ function ContactUs() {
     e.preventDefault();
 
     // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.message
+    ) {
       alert("Please fill out all required fields.");
       return;
     }
@@ -64,8 +69,8 @@ function ContactUs() {
         userID
       );
 
-      setSent(true) 
-       setFormData({
+      setSent(true);
+      setFormData({
         firstName: "",
         lastName: "",
         email: "",
@@ -74,13 +79,14 @@ function ContactUs() {
       });
     } catch (error) {
       console.error("Error sending email:", error);
-      alert("An error occurred while sending your message. Please try again later.");
+      alert(
+        "An error occurred while sending your message. Please try again later."
+      );
     } finally {
       setIsSending(false);
     }
   };
 
-  
   // Animation Variants for Framer Motion
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
@@ -97,13 +103,16 @@ function ContactUs() {
         variants={fadeIn}
       >
         <SubHeading txt={"contact us"} textColor={"blue"} textCase={true} />
-        <Heading txt={"We’d love to hear from you"} />
-        <p className="text-[14px] sm:text-[16px] text-zinc-400">
+        <Heading
+          txt={"We’d love to hear from you"}
+          textStyle={"mb-6 md:mb-0"}
+        />
+        {/* <p className="text-[14px] sm:text-[16px] text-zinc-400">
           Get in touch if you need any help or want to share feedback about
           Aerodome.
           <br />
           We respond back within a business day.
-        </p>
+        </p> */}
       </motion.div>
 
       {/* Content Section */}
@@ -165,7 +174,7 @@ function ContactUs() {
                     Address
                   </h3>
                   <p className="text-white text-[14px] sm:text-[16px] flex gap-2 ">
-                    <MapPin className="w-4 h-4 mt-1 md:mt-2" />
+                    <MapPin className="w-6 md:w-4 h-4 mt-1 md:mt-2" />
                     1st Floor, SSN iFound, SSN College of Engineering,
                     <br />
                     Thiruporur, Kalavakkam, Chennai, Tamil Nadu 603110
@@ -268,8 +277,11 @@ function ContactUs() {
               />
               <button
                 type="submit"
-                className={`w-full bg-blue-600 ${sent === true && "disabled"}hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors`}  >
-                {sent === true ? "Message Sent Successfully":"Send Message"}
+                className={`w-full bg-blue-600 ${
+                  sent === true && "disabled"
+                }hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors`}
+              >
+                {sent === true ? "Message Sent Successfully" : "Send Message"}
               </button>
             </motion.form>
           </div>

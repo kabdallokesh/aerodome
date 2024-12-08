@@ -1,12 +1,12 @@
 import AboutUs from "../components/HomePageComponents/AboutUs";
 import HeroSection from "../components/HomePageComponents/Hero";
 import Services from "../components/HomePageComponents/Services";
-import Technology from "../components/HomePageComponents/Technology";
+// import Technology from "../components/HomePageComponents/Technology";
 import WhyChooseUs from "../components/HomePageComponents/WhyChooseUs";
 
 function Home() {
   return (
-    <div>
+    <div className="mb-10">
       <div id="hero-section" className="w-full z-[300] mt-[-13vh]">
         <HeroSection />
       </div>
@@ -14,11 +14,10 @@ function Home() {
         <Services />
         <WhyChooseUs />
         <AboutUs />
-        <Technology />
+        {/* <Technology /> */}
       </div>
     </div>
   );
 }
 
 export default Home;
-

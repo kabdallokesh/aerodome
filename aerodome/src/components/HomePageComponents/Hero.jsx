@@ -55,19 +55,19 @@ function HeroSection() {
         >
           {/* Heading */}
           <motion.h1
-            className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight"
+            className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight md:mr-36 lg:mr-52"
             variants={childVariant}
           >
             Crafting Stories
           </motion.h1>
           {/* CTA */}
-          <motion.a
+          {/* <motion.a
             href="#service"
             className="text-sm md:text-lg mt-4 underline font-medium"
             variants={childVariant}
           >
             CHECK OUT OUR SERVICE
-          </motion.a>
+          </motion.a> */}
         </motion.div>
 
         <motion.div
@@ -77,16 +77,16 @@ function HeroSection() {
           animate="visible"
         >
           {/* Scroll Down Text */}
-          <motion.a
+          {/* <motion.a
             href="#"
             className="text-sm md:text-lg mt-4 text-right leading-tight font-medium"
             variants={childVariant}
           >
             SCROLL DOWN <br /> TO CHECK MORE
-          </motion.a>
+          </motion.a> */}
           {/* Subheading */}
           <motion.h1
-            className="text-6xl md:text-7xl lg:text-8xl leading-tight font-bold"
+            className="text-6xl md:text-7xl lg:text-8xl leading-tight font-bold md:ml-72 lg:ml-96"
             variants={childVariant}
           >
             In The Sky

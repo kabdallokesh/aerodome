@@ -1,4 +1,9 @@
-import { InstagramIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from "lucide-react";
+import {
+  InstagramIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  YoutubeIcon,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -15,9 +20,9 @@ function Footer() {
         <Link to="/contact-us" className="cursor-pointer">
           Contact
         </Link>
-        <Link to="/contact-us" className="cursor-pointer">
+        {/* <Link to="/contact-us" className="cursor-pointer">
           Privacy Policy
-        </Link>
+        </Link> */}
       </div>
 
       {/* Social Links */}
@@ -54,7 +59,7 @@ function Footer() {
 
       {/* Footer Text */}
       <div className="text-white pt-4 text-center text-[12px] sm:text-[14px]">
-        <p>©️2024 Aerodome || Made with 💖 By Team ECell</p>
+        <p>©️2024 Aerodome || All Right Reserved</p>
       </div>
     </div>
   );
