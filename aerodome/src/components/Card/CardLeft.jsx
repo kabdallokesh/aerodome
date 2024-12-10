@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const CardLeft = ({ number, imageSrc, title, description }) => {
+const CardLeft = ({ imageSrc, title, description }) => {
   return (
     <div className="md:pt-4 pt-2">
       <div className="text-white p-6 rounded-lg flex flex-col md:flex-row items-center gap-6 md:gap-16 shadow-lg">

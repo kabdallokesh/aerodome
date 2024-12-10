@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
@@ -67,6 +66,12 @@ function Navbar() {
               Technology
             </Link>
             <Link
+              to="/team"
+              className={`cursor-pointer ${currentPage === "/team" && "text-[#2563EB]"}`}
+            >
+              Team
+            </Link>
+            <Link
               to="/contact-us"
               className={`cursor-pointer ${
                 currentPage === "/contact-us" && "text-[#2563EB]"
@@ -115,6 +120,15 @@ function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Technology
+          </Link>
+          <Link
+            to="/team"
+            className={`cursor-pointer text-[16px] ${
+              currentPage === "/team" && "text-[#2563EB]"
+            }`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Team
           </Link>
           <Link
             to="/contact-us"

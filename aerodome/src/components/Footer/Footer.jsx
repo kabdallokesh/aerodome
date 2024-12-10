@@ -17,6 +17,9 @@ function Footer() {
         <Link to="/technology" className="cursor-pointer">
           Technology
         </Link>
+        <Link to="/team" className="cursor-pointer">
+          Team
+        </Link>
         <Link to="/contact-us" className="cursor-pointer">
           Contact
         </Link>
