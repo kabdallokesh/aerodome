@@ -1,5 +1,5 @@
 import ProfileCardLarge from "../components/ProfileCard/ProfileCardLarge";
-import ProfileCardSmall from "../components/ProfileCard/ProfileCardSmall";
+// import ProfileCardSmall from "../components/ProfileCard/ProfileCardSmall";
 import Heading from "../components/TextComponents/Heading";
 import SubHeading from "../components/TextComponents/SubHeading";
 import { motion } from "framer-motion";
@@ -52,19 +52,19 @@ function Team() {
         <div className="flex flex-wrap gap-6 justify-center items-end">
           <motion.div variants={childVariant}>
             <ProfileCardLarge
-              name="Vibhor Jain"
+              name="Lokesh Kabdal"
               role="Co-Founder"
-              image="team-vibhor.jpg"
-              linkedin="https://www.linkedin.com/in/vibhor-jain3"
+              image="team-lokesh.jpg"
+              linkedin="https://www.linkedin.com/in/lokesh-kabdal"
             />
           </motion.div>
 
           <motion.div variants={childVariant}>
             <ProfileCardLarge
-              name="Lokesh Kabdal"
+              name="Vibhor Jain"
               role="Co-Founder"
-              image="team-lokesh.jpg"
-              linkedin="https://www.linkedin.com/in/lokesh-kabdal"
+              image="team-vibhor.jpg"
+              linkedin="https://www.linkedin.com/in/vibhor-jain3"
             />
           </motion.div>
 
