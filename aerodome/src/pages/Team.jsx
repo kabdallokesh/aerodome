@@ -1,5 +1,3 @@
-"use client";
-
 import ProfileCardLarge from "../components/ProfileCard/ProfileCardLarge";
 import ProfileCardSmall from "../components/ProfileCard/ProfileCardSmall";
 import Heading from "../components/TextComponents/Heading";
@@ -53,7 +51,7 @@ function Team() {
       >
         <div className="flex flex-wrap gap-6 justify-center items-end">
           <motion.div variants={childVariant}>
-            <ProfileCardSmall
+            <ProfileCardLarge
               name="Vibhor Jain"
               role="Co-Founder"
               image="team-vibhor.jpg"
@@ -80,7 +78,7 @@ function Team() {
           </motion.div>
 
           <motion.div variants={childVariant}>
-            <ProfileCardSmall
+            <ProfileCardLarge
               name="Dr. Satyanarayanan Chakravarthy"
               role="Co-Founder"
               image="team-satya.jpg"
