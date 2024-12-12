@@ -80,7 +80,7 @@ function Team() {
           <motion.div variants={childVariant}>
             <ProfileCardLarge
               name="Dr. Satyanarayanan Chakravarthy"
-              role="Co-Founder"
+              role="Advisor"
               image="team-satya.jpg"
               linkedin="https://www.linkedin.com/in/satya-chakravarthy-51326241"
             />
