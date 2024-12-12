@@ -45,10 +45,10 @@ function Technology() {
           <CardLeft
             number=""
             imageSrc="https://via.placeholder.com/480x290"
-            title="Self - Developed Drones"
+            title="In-House Developed Drones"
             description="Crafted with advanced engineering and innovation, our self-developed drones are built for versatility and peak performance.
 
-            They feature state-of-the-art technology to deliver precision, reliability, and efficiency, tailored to meet the needs of industries ranging from entertainment to logistics."
+The drones are equipped with state-of-the-art technology designed to ensure reliability, precision, and efficiency, even under the most challenging environmental conditions."
           />
         </motion.div>
 
@@ -59,11 +59,11 @@ function Technology() {
         >
           <CardRight
             number="4"
-            imageSrc="https://via.placeholder.com/480x290"
-            title="GNSS Module"
-            description="Our GNSS modules provide precise positioning and navigation capabilities, ensuring accurate flight paths and reliable performance in various environments. 
-
-            They are essential for seamless drone operations, enabling efficient and consistent results."
+            imageSrc="gnss.jpg"
+            title="Precision GNSS Module"
+            description="OOur GNSS modules deliver centimeter-level precision in positioning and navigation, enabling accurate flight paths and dependable performance even in the most demanding environments. 
+            
+            These modules are integral to seamless swarm operations and precise visual coordination."
           />
         </motion.div>
 
@@ -73,7 +73,7 @@ function Technology() {
           variants={fadeInFromLeft}
         >
           <CardLeft
-            imageSrc="https://via.placeholder.com/480x290"
+            imageSrc="led.jpg"
             title="LED Module"
             description="Our LED modules are designed for vibrant, high-visibility displays, making them ideal for drone shows and creative aerial applications. 
 
@@ -89,12 +89,29 @@ function Technology() {
           <CardRight
             imageSrc="https://via.placeholder.com/480x290"
             title="Compass Technology"
-            description="Our advanced compass technology ensures accurate navigation and orientation for drones in diverse environments. 
+            description="Our advanced military-grade compass technology ensures accurate navigation and orientation for drones in diverse environments. 
+            
+            The rugged design enhances the stability, reliability, and precision of the drone during complex operations."
+          />
+        </motion.div>
 
-            It enhances stability, precision, and reliability, making operations seamless and efficient even in challenging conditions."
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={fadeInFromLeft}
+        >
+          <CardLeft
+            imageSrc="https://via.placeholder.com/480x290"
+            title="Swarm Technology"
+            description="Swarm technology presents transformative potential for enhancing task efficiency, enabling drones to adapt to diverse challenges, and creating redundant, reliable systems for applications such as defense, emergency logistics, and surveillance. 
+
+At AeroDome, we have also successfully tested and demonstrated advanced decentralized swarm technology, with a primary focus on defense applications."
           />
         </motion.div>
       </div>
+
+      
 
       {/* Showcase Section */}
       <motion.div
