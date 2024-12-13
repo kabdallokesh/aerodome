@@ -27,7 +27,7 @@ const CardLeft = ({ imageSrc, title, description }) => {
         </div>
 
         {/* Right Side - Text Content */}
-        <div className="text-center md:text-left">
+        <div className="text-center md:text-justify">
           <h3 className="text-[18px] md:text-[20px] font-semibold mb-4">
             {title}
           </h3>
