@@ -4,7 +4,7 @@ import CardRight from "../components/Card/CardRight";
 import InfiniteImageSlider from "../components/ImageGallery/ImageGallery";
 import Heading from "../components/TextComponents/Heading";
 import SubHeading from "../components/TextComponents/SubHeading";
-
+import NormalText from "../components/TextComponents/NormalText";
 function Technology() {
   // Animation Variants for Framer Motion
   const fadeIn = {
@@ -61,7 +61,7 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
             number="4"
             imageSrc="gnss.jpg"
             title="Precision GNSS Module"
-            description="OOur GNSS modules deliver centimeter-level precision in positioning and navigation, enabling accurate flight paths and dependable performance even in the most demanding environments. 
+            description="Our GNSS modules deliver centimeter-level precision in positioning and navigation, enabling accurate flight paths and dependable performance even in the most demanding environments. 
             
             These modules are integral to seamless swarm operations and precise visual coordination."
           />
@@ -94,24 +94,7 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
             The rugged design enhances the stability, reliability, and precision of the drone during complex operations."
           />
         </motion.div>
-
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          variants={fadeInFromLeft}
-        >
-          <CardLeft
-            imageSrc="https://via.placeholder.com/480x290"
-            title="Swarm Technology"
-            description="Swarm technology presents transformative potential for enhancing task efficiency, enabling drones to adapt to diverse challenges, and creating redundant, reliable systems for applications such as defense, emergency logistics, and surveillance. 
-
-At AeroDome, we have also successfully tested and demonstrated advanced decentralized swarm technology, with a primary focus on defense applications."
-          />
-        </motion.div>
       </div>
-
-      
 
       {/* Showcase Section */}
       <motion.div
@@ -124,6 +107,11 @@ At AeroDome, we have also successfully tested and demonstrated advanced decentra
           <SubHeading txt={"Swarn"} textColor={"blue"} textCase={true} />
           <Heading txt={"Technology"} textStyle={"text-center md:text-start"} />
         </div>
+        <NormalText
+          txt="Swarm technology presents transformative potential for enhancing task efficiency, enabling drones to adapt to diverse challenges, and creating redundant, reliable systems for applications such as defense, emergency logistics, and surveillance. 
+At AeroDome, we have also successfully tested and demonstrated advanced decentralized swarm technology, with a primary focus on defense applications."
+          txtStyle={"text-white/80 my-5"}
+        />
         <div className="w-full pt-4 overflow-x-hidden">
           <InfiniteImageSlider />
         </div>
