@@ -74,9 +74,9 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
           variants={fadeInFromLeft}
         >
           <CardLeft
-            imageSrc="led.jpg"
-            // title="LED Module"
-            title="https://via.placeholder.com/480x290"
+            // imageSrc="led.jpg"
+            imageSrc="https://via.placeholder.com/480x290"
+            title="LED Module"
             description="Our LED modules are designed for vibrant, high-visibility displays, making them ideal for drone shows and creative aerial applications. 
 
             They deliver seamless performance, transforming aerial visuals into captivating experiences."
