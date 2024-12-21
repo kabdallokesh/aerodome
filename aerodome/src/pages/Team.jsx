@@ -53,7 +53,7 @@ function Team() {
           <motion.div variants={childVariant}>
             <ProfileCardLarge
               name="Lokesh Kabdal"
-              role="Co-Founder"
+              role="Co-Founder and CEO"
               image="team-lokesh.jpg"
               linkedin="https://www.linkedin.com/in/lokesh-kabdal"
             />
@@ -62,7 +62,7 @@ function Team() {
           <motion.div variants={childVariant}>
             <ProfileCardLarge
               name="Vibhor Jain"
-              role="Co-Founder"
+              role="Co-Founder and Chief Business Officer"
               image="team-vibhor.jpg"
               linkedin="https://www.linkedin.com/in/vibhor-jain3"
             />
@@ -71,7 +71,7 @@ function Team() {
           <motion.div variants={childVariant}>
             <ProfileCardLarge
               name="Anurag Patil"
-              role="Co-Founder"
+              role="Co-Founder and CTO"
               image="team-anurag.jpg"
               linkedin="https://www.linkedin.com/in/anurag-jeevan-patil"
             />
