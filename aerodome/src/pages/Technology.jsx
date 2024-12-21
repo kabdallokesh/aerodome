@@ -59,7 +59,8 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
         >
           <CardRight
             number="4"
-            imageSrc="gnss.jpg"
+            // imageSrc="gnss.jpg"
+            imageSrc="https://via.placeholder.com/480x290"
             title="Precision GNSS Module"
             description="Our GNSS modules deliver centimeter-level precision in positioning and navigation, enabling accurate flight paths and dependable performance even in the most demanding environments. 
             
@@ -74,7 +75,8 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
         >
           <CardLeft
             imageSrc="led.jpg"
-            title="LED Module"
+            // title="LED Module"
+            title="https://via.placeholder.com/480x290"
             description="Our LED modules are designed for vibrant, high-visibility displays, making them ideal for drone shows and creative aerial applications. 
 
             They deliver seamless performance, transforming aerial visuals into captivating experiences."
