@@ -34,6 +34,13 @@ function Navbar() {
             >
               Technology
             </Link>
+
+            <Link
+              to="/portfolio"
+              className={`cursor-pointer ${currentPage === "/portfolio" && "text-[#2563EB]"}`}
+            >
+              Portfolio
+            </Link>
             <Link
               to="/team"
               className={`cursor-pointer ${currentPage === "/team" && "text-[#2563EB]"}`}
