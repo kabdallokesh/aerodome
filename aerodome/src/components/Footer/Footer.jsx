@@ -37,13 +37,13 @@ function Footer() {
         >
           <InstagramIcon className="w-5 h-5" />
         </a>
-        <a
+        {/* <a
           href="#"
           aria-label="Twitter"
           className="hover:text-blue-500 transition-colors flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-[#ffffff0a] rounded-full"
         >
           <TwitterIcon className="w-5 h-5" />
-        </a>
+        </a> */}
         <a
           href="#"
           aria-label="YouTube"

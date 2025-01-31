@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import CardLeft from "../components/Card/CardLeft";
 import CardRight from "../components/Card/CardRight";
-import InfiniteImageSlider from "../components/ImageGallery/ImageGallery";
+// import InfiniteImageSlider from "../components/ImageGallery/ImageGallery";
 import Heading from "../components/TextComponents/Heading";
 import SubHeading from "../components/TextComponents/SubHeading";
 import NormalText from "../components/TextComponents/NormalText";
@@ -9,17 +9,17 @@ function Technology() {
   // Animation Variants for Framer Motion
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
   const fadeInFromLeft = {
     hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 1.2 } },
   };
 
   const fadeInFromRight = {
     hidden: { opacity: 0, x: 100 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 1.2 } },
   };
 
   return (
@@ -41,10 +41,13 @@ function Technology() {
           initial="hidden"
           whileInView="visible"
           variants={fadeInFromLeft}
+          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-10 md:py-10 md:px-10"
         >
           <CardLeft
-            number=""
-            imageSrc="https://via.placeholder.com/480x290"
+            number="1"
+            imageSrc={
+              "https://res.cloudinary.com/dwtytn7fl/image/upload/v1738166022/Drone_Technology_gojsgv.jpg"
+            }
             title="In-House Developed Drones"
             description="Crafted with advanced engineering and innovation, our self-developed drones are built for versatility and peak performance.
 
@@ -106,17 +109,24 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
         variants={fadeIn}
       >
         <div className="w-full md:w-2/3 lg:w-[85%] flex flex-col gap-2 items-center md:items-start">
-          <SubHeading txt={"Swarn"} textColor={"blue"} textCase={true} />
-          <Heading txt={"Technology"} textStyle={"text-center md:text-start"} />
+          {/* <SubHeading
+            txt={"Swarm Technology"}
+            textColor={"blue"}
+            textCase={true}
+          /> */}
+          <Heading
+            txt={"Swarm Technology"}
+            textStyle={"text-center md:text-start"}
+          />
         </div>
         <NormalText
           txt="Swarm technology presents transformative potential for enhancing task efficiency, enabling drones to adapt to diverse challenges, and creating redundant, reliable systems for applications such as defense, emergency logistics, and surveillance. 
 At AeroDome, we have also successfully tested and demonstrated advanced decentralized swarm technology, with a primary focus on defense applications."
           txtStyle={"text-white/80 my-5"}
         />
-        <div className="w-full pt-4 overflow-x-hidden">
+        {/* <div className="w-full pt-4 overflow-x-hidden">
           <InfiniteImageSlider />
-        </div>
+        </div> */}
       </motion.div>
     </div>
   );

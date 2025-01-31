@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import SubHeading from "../TextComponents/SubHeading";
 import NormalText from "../TextComponents/NormalText";
 import { motion } from "framer-motion";
+import { UserCheck } from "lucide-react";
 function Service({ Headtxt, txt, img, style, orderOne, orderTwo }) {
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
@@ -22,7 +23,11 @@ function Service({ Headtxt, txt, img, style, orderOne, orderTwo }) {
         whileInView={"visible"}
         className={`flex justify-center items-center bg-blue-600 rounded-full h-10 w-12 ${orderTwo}`}
       >
-        <img src={img} alt="service" className="m-5 h-7 w-7 bg-blue-600" />
+        {img ? (
+          <img src={img} alt="service" className="m-5 h-7 w-7 bg-blue-600" />
+        ) : (
+          <UserCheck className="text-white mx-2 w-6 h-6" />
+        )}
       </motion.div>
     </div>
   );

@@ -35,9 +35,9 @@ function Team() {
         animate="visible"
         variants={fadeIn}
       >
-        <SubHeading txt={"team"} textColor={"blue"} textCase={true} />
+        <SubHeading txt={"Our"} textColor={"blue"} textCase={true} />
         <Heading
-          txt={"Team Perfection At It’s Finest"}
+          txt={"Team"}
           textStyle={"mb-6 md:mb-0"}
         />
       </motion.div>
@@ -62,7 +62,7 @@ function Team() {
           <motion.div variants={childVariant}>
             <ProfileCardLarge
               name="Vibhor Jain"
-              role="Co-Founder and Chief Business Officer"
+              role="Co-Founder and CBO"
               image="team-vibhor.jpg"
               linkedin="https://www.linkedin.com/in/vibhor-jain3"
             />

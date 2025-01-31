@@ -59,13 +59,13 @@ function AboutUs() {
           <div className="flex flex-col items-center md:items-start">
             <NormalText
               txt={
-                "AeroDome was founded in 2023 by three alumni from the Indian Institute of Technology Madras. They previously worked together as part of the core team of Avishkar Hyperloop, a student competition team at IIT Madras, and received $1.25M in funding for Avishkar from the Railway Ministry & other corporates. They were among the top three teams globally for hyperloop development."
+                "AeroDome was founded in 2023 by three alumni from the Indian Institute of Technology Madras. They previously worked together as part of the core team of Avishkar Hyperloop, a student team at IIT Madras developing hyperloop technologies for the world, and received $1.25M in funding for Avishkar from the Railway Ministry & other corporates. They were among the top three teams globally for hyperloop development."
               }
               txtStyle={"text-white/60 text-center md:text-left"}
             />
             <NormalText
               txt={
-                "We are an NSRCEL, IIM Bangalore incubated startup, based in Chennai and supported by various top incubators of the country including Deshpande Startups, SSN iFound, and VELTECH TBI. Our team consists of brilliant individuals from diverse backgrounds along with seasoned industry experts and top mentors from the startup ecosystem in India who advise us on both the technology and business front."
+                "AeroDome is an NSRCEL, IIM Bangalore incubated startup, and supported by various top incubators of the country including Deshpande Startups, SSN iFound, and VELTECH TBI. The team consists of brilliant individuals from diverse backgrounds along with seasoned industry experts and top mentors from the startup ecosystem, who advise on both the technology and business front."
               }
               txtStyle={"mt-3  text-white/60  text-center md:text-left"}
             />
@@ -81,7 +81,7 @@ function AboutUs() {
         </div>
         <div>
           <SubHeading
-            txt={"BACKERS"}
+            txt={"SUPPORTED BY"}
             textCase={false}
             textColor={"white"}
             textStyle={"text-center md:text-left"}

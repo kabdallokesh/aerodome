@@ -102,7 +102,12 @@ function ContactUs() {
         animate="visible"
         variants={fadeIn}
       >
-        <SubHeading txt={"contact us"} textColor={"blue"} textCase={true} />
+        <SubHeading
+          txt={"contact us"}
+          textStyle={"text-xl"}
+          textColor={"blue"}
+          textCase={true}
+        />
         <Heading
           txt={"We’d love to hear from you"}
           textStyle={"mb-6 md:mb-0"}
@@ -161,7 +166,7 @@ function ContactUs() {
                     Contact Number
                   </h3>
                   <p className="text-white text-[14px] sm:text-[16px] flex gap-2 items-center">
-                    <PhoneCallIcon className="w-4 h-4" /> +91 9166836673
+                    <PhoneCallIcon className="w-4 h-4" /> +91 7358322001
                   </p>
                 </div>
               </div>
@@ -194,13 +199,13 @@ function ContactUs() {
                   >
                     <InstagramIcon className="w-5 h-5" />
                   </a>
-                  <a
+                  {/* <a
                     href="#"
                     aria-label="Twitter"
                     className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
                   >
                     <TwitterIcon className="w-5 h-5" />
-                  </a>
+                  </a> */}
                   <a
                     href="#"
                     aria-label="YouTube"

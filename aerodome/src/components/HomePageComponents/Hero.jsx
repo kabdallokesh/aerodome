@@ -31,6 +31,11 @@ function HeroSection() {
           alt="Drone"
           className="w-full h-full object-cover"
         />
+        {/* <video
+          alt="Drone"
+          className="w-full h-full object-cover aspect-video"
+          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1738161982/aerodome/bufo08m4kwfph11hdq57.mov"
+        ></video> */}
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black opacity-60"></div>
         {/* Grid Overlay */}

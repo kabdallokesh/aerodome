@@ -8,6 +8,7 @@ import S1 from "../../assets/assured.png";
 import S2 from "../../assets/dynamic.png";
 import S3 from "../../assets/precision.png";
 import { motion } from "framer-motion";
+import { UserCheck } from "lucide-react";
 function Services() {
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
@@ -35,18 +36,36 @@ function Services() {
           whileInView={"visible"}
           className="mt-5 mb-8 md:mb-0"
         >
-          <Button txt={"Get Quotations"} link={"/contact-us"} />
+          <button type="button" className="btn">
+            <strong>Get Quotations</strong>
+            <div id="container-stars">
+              <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+              <div className="circle"></div>
+              <div className="circle"></div>
+            </div>
+          </button>
+          {/* <Button txt={"Get Quotations"} link={"/contact-us"} /> */}
         </motion.div>
       </div>
       <div className="w-full md:w-1/3 flex justify-center items-center  mb-8 md:mb-0">
-        <img src={droneImg} alt="drone image" className="w-4/5" />/
+        <img
+          src={
+            "https://res.cloudinary.com/dwtytn7fl/image/upload/v1738161885/aerodome/hcknebinpabypybkvvu0.jpg"
+          }
+          alt="drone image"
+          className="w-4/5 rounded-3xl"
+        />
+        /
       </div>
       <div className="w-full md:w-1/3 flex flex-col gap-5">
         <Service
           Headtxt="Highly Reliable Shows"
           txt="Through multiple safety layers, AeroDome’s system is completely fail-safe."
           img={S1}
-          style={"md:mr-16"}
+          style={"md:mr-14"}
           orderOne={"order-2 md:order-1"}
           orderTwo={"order-1 md:order-2"}
         />
@@ -62,7 +81,15 @@ function Services() {
           Headtxt="Precise Picturisation"
           txt="Cutting-Edge GNSS technology for real-life high-quality visualization."
           img={S3}
-          style={"md:mr-16"}
+          style={"md:mr-14"}
+          orderOne={"order-2 md:order-1"}
+          orderTwo={"order-1 md:order-2"}
+        />
+        <Service
+          Headtxt="Customer-Centric Approach"
+          txt="Creating breathtaking drone shows that inspire awe and unforgettable emotions."
+          img={""}
+          style={""}
           orderOne={"order-2 md:order-1"}
           orderTwo={"order-1 md:order-2"}
         />
