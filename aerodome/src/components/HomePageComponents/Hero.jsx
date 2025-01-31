@@ -22,24 +22,28 @@ function HeroSection() {
   };
 
   return (
-    <div className="relative w-full h-[100vh] mb-16 bg-black">
+    <div className="relative w-full h-[100vh] mb-16 bg-black overflow-y-hidden">
       {/* <Navbar /> */}
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        {/* <img
           src="hero-img.png" // Replace with the actual image URL
           alt="Drone"
           className="w-full h-full object-cover"
-        />
-        {/* <video
+        /> */}
+        <video
           alt="Drone"
-          className="w-full h-full object-cover aspect-video"
-          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1738161982/aerodome/bufo08m4kwfph11hdq57.mov"
-        ></video> */}
+          autoPlay
+          loop
+          muted
+          className="w-[100vw] z-[-20]"
+          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1738342595/My_Video5_r8m4tt.mp4"
+        ></video>
+
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black opacity-60"></div>
         {/* Grid Overlay */}
-        <div
+        {/* <div
           className="absolute inset-0 -top-48"
           style={{
             backgroundImage: "url('grid.png')", // Replace with the actual grid image path
@@ -47,7 +51,7 @@ function HeroSection() {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-        ></div>
+        ></div> */}
       </div>
 
       {/* Content */}

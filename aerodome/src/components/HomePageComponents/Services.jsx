@@ -56,9 +56,8 @@ function Services() {
             "https://res.cloudinary.com/dwtytn7fl/image/upload/v1738161885/aerodome/hcknebinpabypybkvvu0.jpg"
           }
           alt="drone image"
-          className="w-4/5 rounded-3xl"
+          className="w-4/5 rounded-3xl opacity-80"
         />
-        /
       </div>
       <div className="w-full md:w-1/3 flex flex-col gap-5">
         <Service
