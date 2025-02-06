@@ -73,10 +73,14 @@ function Portfolio() {
         {/* Small Video Section */}
         <div className="grid grid-cols-1  md:grid-cols-2 gap-6 ">
           <motion.div
-            className="relative rounded-xl overflow-hidden border-2  border-[#FFFFFF1A] bg-[#181818] p-4"
+            className="relative rounded-xl overflow-hidden border-2 flex flex-col items-center  border-[#FFFFFF1A] bg-[#181818] p-4"
             variants={childVariant}
           >
-           <iframe
+               <video
+              controls
+              className=" aspect-auto w-1/2"
+              src="https://res.cloudinary.com/dwtytn7fl/video/upload/q_auto/v1738161928/aerodome/djqlwo79d38r5q7zupit.mp4"></video>
+           {/* <iframe
             width="100%"
             height="300"
             src="https://youtube.com/shorts/NvXBRzYEQrE"
@@ -84,7 +88,7 @@ function Portfolio() {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></iframe>
+          ></iframe> */}
             <div className=" bottom-4  text-white bg-black opacity-60 p-3  w-full  shadow-2xl shadow-black">
             <h3 className="font-bold">Yoga Show</h3>
             {/* <p className="text-sm opacity-80">
@@ -95,10 +99,14 @@ function Portfolio() {
           </motion.div>
 
           <motion.div
-            className="relative rounded-xl overflow-hidden border-2  border-[#FFFFFF1A] bg-[#181818] p-4"
+            className="relative rounded-xl overflow-hidden border-2 flex flex-col items-center  border-[#FFFFFF1A] bg-[#181818] p-4"
             variants={childVariant}
           >
-           <iframe
+            <video
+              controls
+              className=" aspect-auto w-1/2"
+              src="https://res.cloudinary.com/dwtytn7fl/video/upload/q_auto/v1738161973/aerodome/ybxezmyjf0gskrur6xxn.mp4"></video>
+           {/* <iframe
             width="100%"
             height="300"
             src="https://youtube.com/shorts/33ViZScuk_I"
@@ -106,7 +114,7 @@ function Portfolio() {
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></iframe>
+          ></iframe> */}
             <div className=" bottom-4  text-white bg-black opacity-60 p-3  w-full  shadow-2xl shadow-black">
             <h3 className="font-bold">Ahmedabad</h3>
             {/* <p className="text-sm opacity-80">
