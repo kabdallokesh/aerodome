@@ -37,7 +37,7 @@ function Services() {
           className="mt-5 mb-8 md:mb-0"
         >
           <button type="button" className="btn">
-            <strong>Get Quotations</strong>
+            <strong className="text-[0.9rem]">Get Quotations</strong>
             <div id="container-stars">
               <div id="stars"></div>
             </div>
@@ -59,7 +59,7 @@ function Services() {
           className="w-4/5 rounded-3xl opacity-80"
         />
       </div>
-      <div className="w-full md:w-1/3 flex flex-col gap-5">
+      <div className="w-full md:w-[38%] flex flex-col gap-5">
         <Service
           Headtxt="Highly Reliable Shows"
           txt="Through multiple safety layers, AeroDome’s system is completely fail-safe."
@@ -86,7 +86,7 @@ function Services() {
         />
         <Service
           Headtxt="Customer-Centric Approach"
-          txt="Creating breathtaking drone shows that inspire awe and unforgettable emotions."
+          txt="customer-centric"
           img={""}
           style={""}
           orderOne={"order-2 md:order-1"}

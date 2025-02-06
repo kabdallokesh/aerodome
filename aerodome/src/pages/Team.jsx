@@ -1,7 +1,7 @@
 import ProfileCardLarge from "../components/ProfileCard/ProfileCardLarge";
 // import ProfileCardSmall from "../components/ProfileCard/ProfileCardSmall";
 import Heading from "../components/TextComponents/Heading";
-import SubHeading from "../components/TextComponents/SubHeading";
+// import SubHeading from "../components/TextComponents/SubHeading";
 import { motion } from "framer-motion";
 
 function Team() {
@@ -35,9 +35,9 @@ function Team() {
         animate="visible"
         variants={fadeIn}
       >
-        <SubHeading txt={"Our"} textColor={"blue"} textCase={true} />
+        {/* <SubHeading txt={"Our"} textColor={"blue"} textCase={true} /> */}
         <Heading
-          txt={"Team"}
+          txt={"Our Team"}
           textStyle={"mb-6 md:mb-0"}
         />
       </motion.div>

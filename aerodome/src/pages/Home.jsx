@@ -2,7 +2,7 @@ import AboutUs from "../components/HomePageComponents/AboutUs";
 import HeroSection from "../components/HomePageComponents/Hero";
 import Services from "../components/HomePageComponents/Services";
 // import Technology from "../components/HomePageComponents/Technology";
-import WhyChooseUs from "../components/HomePageComponents/WhyChooseUs";
+// import WhyChooseUs from "../components/HomePageComponents/WhyChooseUs";
 
 function Home() {
   return (

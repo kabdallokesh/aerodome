@@ -36,7 +36,7 @@ function Technology() {
       </motion.div>
 
       {/* Technology Section */}
-      <div className="md:p-8 p-4">
+      <div className="md:p-8 p-4 flex flex-col gap-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -59,11 +59,11 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
           initial="hidden"
           whileInView="visible"
           variants={fadeInFromRight}
+           className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-10 md:py-10 md:px-10"
         >
           <CardRight
             number="4"
-            // imageSrc="gnss.jpg"
-            imageSrc="https://via.placeholder.com/480x290"
+            imageSrc="gnss"
             title="Precision GNSS Module"
             description="Our GNSS modules deliver centimeter-level precision in positioning and navigation, enabling accurate flight paths and dependable performance even in the most demanding environments. 
             
@@ -75,14 +75,15 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
           initial="hidden"
           whileInView="visible"
           variants={fadeInFromLeft}
+          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-10 md:py-10 md:px-10"
         >
           <CardLeft
             // imageSrc="led.jpg"
             imageSrc="https://via.placeholder.com/480x290"
             title="LED Module"
-            description="Our LED modules are designed for vibrant, high-visibility displays, making them ideal for drone shows and creative aerial applications. 
+            description="LED Statement: Our LED modules are engineered for ultra-vibrant, high-visibility displays, visible from up to 4 km away. 
 
-            They deliver seamless performance, transforming aerial visuals into captivating experiences."
+            They create stunning aerial visuals with an incredible spectrum of 16 million colors."
           />
         </motion.div>
 
@@ -90,9 +91,10 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
           initial="hidden"
           whileInView="visible"
           variants={fadeInFromRight}
+          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-10 md:py-10 md:px-10"
         >
           <CardRight
-            imageSrc="https://via.placeholder.com/480x290"
+            imageSrc="compass"
             title="Compass Technology"
             description="Our advanced military-grade compass technology ensures accurate navigation and orientation for drones in diverse environments. 
             

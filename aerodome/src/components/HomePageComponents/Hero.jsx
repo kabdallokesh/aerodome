@@ -23,21 +23,22 @@ function HeroSection() {
 
   return (
     <div className="relative w-full h-[100vh] mb-16 bg-black overflow-y-hidden">
-      {/* <Navbar /> */}
-      {/* Background Image */}
       <div className="absolute inset-0">
-        {/* <img
-          src="hero-img.png" // Replace with the actual image URL
+         <video
           alt="Drone"
-          className="w-full h-full object-cover"
-        /> */}
+          autoPlay
+          loop
+          muted
+          className="flex md:hidden h-[100vh] z-[-20]"
+          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1738839708/mobileAerodome_gj8owx.mp4"
+        ></video>
         <video
           alt="Drone"
           autoPlay
           loop
           muted
-          className="w-[100vw] z-[-20]"
-          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1738342595/My_Video5_r8m4tt.mp4"
+          className="hidden md:flex w-[100vw] z-[-20]"
+          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1738839292/Untitled_video_-_Made_with_Clipchamp_1_veqy20.mp4"
         ></video>
 
         {/* Dark Overlay */}
