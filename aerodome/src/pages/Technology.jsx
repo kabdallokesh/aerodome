@@ -36,12 +36,12 @@ function Technology() {
       </motion.div>
 
       {/* Technology Section */}
-      <div className="md:p-8 p-4 flex flex-col gap-10">
+      <div className="md:p-8 p-4 flex flex-col gap-10 mt-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
           variants={fadeInFromLeft}
-          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-10 md:py-10 md:px-10"
+          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-5 md:py-10 md:px-10"
         >
           <CardLeft
             number="1"
@@ -59,7 +59,7 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
           initial="hidden"
           whileInView="visible"
           variants={fadeInFromRight}
-           className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-10 md:py-10 md:px-10"
+          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-5 md:py-10 md:px-10"
         >
           <CardRight
             number="4"
@@ -75,13 +75,13 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
           initial="hidden"
           whileInView="visible"
           variants={fadeInFromLeft}
-          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-10 md:py-10 md:px-10"
+          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-5 md:py-10 md:px-10"
         >
           <CardLeft
             // imageSrc="led.jpg"
-            imageSrc="https://via.placeholder.com/480x290"
+            imageSrc="https://res.cloudinary.com/dwtytn7fl/image/upload/v1738161885/aerodome/hcknebinpabypybkvvu0.jpg"
             title="LED Module"
-            description="LED Statement: Our LED modules are engineered for ultra-vibrant, high-visibility displays, visible from up to 4 km away. 
+            description="Our LED modules are engineered for ultra-vibrant, high-visibility displays, visible from up to 4 km away. 
 
             They create stunning aerial visuals with an incredible spectrum of 16 million colors."
           />
@@ -91,7 +91,7 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
           initial="hidden"
           whileInView="visible"
           variants={fadeInFromRight}
-          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-10 md:py-10 md:px-10"
+          className="flex flex-col gap-10 rounded-3xl bg-gray-300/5 px-5 py-5 md:py-10 md:px-10"
         >
           <CardRight
             imageSrc="compass"
@@ -124,7 +124,7 @@ The drones are equipped with state-of-the-art technology designed to ensure reli
         <NormalText
           txt="Swarm technology presents transformative potential for enhancing task efficiency, enabling drones to adapt to diverse challenges, and creating redundant, reliable systems for applications such as defense, emergency logistics, and surveillance. 
 At AeroDome, we have also successfully tested and demonstrated advanced decentralized swarm technology, with a primary focus on defense applications."
-          txtStyle={"text-white/80 my-5"}
+          txtStyle={"text-white/80 my-5 text-center md:text-left"}
         />
         {/* <div className="w-full pt-4 overflow-x-hidden">
           <InfiniteImageSlider />

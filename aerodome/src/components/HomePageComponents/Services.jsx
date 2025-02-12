@@ -1,15 +1,14 @@
 import SubHeading from "../TextComponents/SubHeading";
 import Heading from "../TextComponents/Heading";
 import NormalText from "../TextComponents/NormalText";
-import Button from "../Button/Button";
 import Service from "./Service";
-import droneImg from "../../assets/image 14.png";
 import S1 from "../../assets/assured.png";
 import S2 from "../../assets/dynamic.png";
 import S3 from "../../assets/precision.png";
 import { motion } from "framer-motion";
-import { UserCheck } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 function Services() {
+  const history = useNavigate();
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -36,8 +35,14 @@ function Services() {
           whileInView={"visible"}
           className="mt-5 mb-8 md:mb-0"
         >
-          <button type="button" className="btn">
-            <strong className="text-[0.9rem]">Get Quotations</strong>
+          <button
+            onClick={() => {
+              history("/contact-us");
+            }}
+            type="button"
+            className="btn"
+          >
+            <strong className="text-[0.9rem] md:text-xl">Get Quotations</strong>
             <div id="container-stars">
               <div id="stars"></div>
             </div>

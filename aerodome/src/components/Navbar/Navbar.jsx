@@ -67,13 +67,17 @@ function Navbar() {
             </Link>
             <Link
               to="/portfolio"
-              className={`cursor-pointer ${currentPage === "/portfolio" && "text-[#2563EB]"}`}
+              className={`cursor-pointer ${
+                currentPage === "/portfolio" && "text-[#2563EB]"
+              }`}
             >
               Portfolio
             </Link>
             <Link
               to="/team"
-              className={`cursor-pointer ${currentPage === "/team" && "text-[#2563EB]"}`}
+              className={`cursor-pointer ${
+                currentPage === "/team" && "text-[#2563EB]"
+              }`}
             >
               Team
             </Link>
@@ -126,6 +130,15 @@ function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Technology
+          </Link>
+          <Link
+            to="/portfolio"
+            className={`cursor-pointer text-[16px] ${
+              currentPage === "/portfolio" && "text-[#2563EB]"
+            }`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Portfolio
           </Link>
           <Link
             to="/team"

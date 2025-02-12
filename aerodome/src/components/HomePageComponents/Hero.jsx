@@ -24,7 +24,7 @@ function HeroSection() {
   return (
     <div className="relative w-full h-[100vh] mb-16 bg-black overflow-y-hidden">
       <div className="absolute inset-0">
-         <video
+        <video
           alt="Drone"
           autoPlay
           loop
@@ -42,7 +42,7 @@ function HeroSection() {
         ></video>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-black opacity-60"></div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         {/* Grid Overlay */}
         {/* <div
           className="absolute inset-0 -top-48"
@@ -65,7 +65,7 @@ function HeroSection() {
         >
           {/* Heading */}
           <motion.h1
-            className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight md:mr-36 lg:mr-52"
+            className="text-6xl md:text-7xl lg:text-8xl font-bold text-white/90 leading-tight md:mr-36 lg:mr-52"
             variants={childVariant}
           >
             Crafting Stories
@@ -96,7 +96,7 @@ function HeroSection() {
           </motion.a> */}
           {/* Subheading */}
           <motion.h1
-            className="text-6xl md:text-7xl lg:text-8xl leading-tight font-bold md:ml-72 lg:ml-96"
+            className="text-6xl md:text-7xl lg:text-8xl leading-tight font-bold text-white/90 md:ml-72 lg:ml-96"
             variants={childVariant}
           >
             In The Sky

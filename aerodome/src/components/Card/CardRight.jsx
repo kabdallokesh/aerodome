@@ -5,7 +5,7 @@ const CardRight = ({  imageSrc, title, description }) => {
   return (
     <div className="md:pt-4 pt-2">
       <div className="text-white p-6 rounded-lg flex flex-col md:flex-row-reverse items-center gap-6 md:gap-16">
-        <div className="flex-shrink-0 bg-black rounded-xl">
+        <div className="flex-shrink-0 bg-transparent rounded-xl">
           <img
             src={imageSrc==='gnss'?gnss:compass}
             alt={title}

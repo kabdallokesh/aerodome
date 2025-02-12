@@ -3,11 +3,15 @@ const CardLeft = ({ imageSrc, title, description, number }) => {
   return (
     <div className="md:pt-4 pt-2">
       <div className="text-white p-6 rounded-lg flex flex-col md:flex-row items-center gap-6 md:gap-16">
-         <div className="flex-shrink-0 bg-white rounded-xl">
+        <div className="flex-shrink-0 bg-white rounded-xl">
           <img
             src={imageSrc}
             alt={title}
-            className="rounded-xl object-cover object-[0,-140px] h-40 aspect-video"
+            className={`rounded-xl object-cover ${
+              title == "In-House Developed Drones"
+                ? "object-[0,-105px] md:object-[0,-140px]"
+                : ""
+            } h-40 aspect-video`}
           />
         </div>
 
@@ -32,11 +36,9 @@ const CardLeft = ({ imageSrc, title, description, number }) => {
                 <br />
               </p>
             ) : (
-              description.split("\n").map((line, index) => (
-                <span key={index}>
-                  {line}
-                </span>
-              ))
+              description
+                .split("\n")
+                .map((line, index) => <span key={index}>{line}</span>)
             )}
           </p>
         </div>
