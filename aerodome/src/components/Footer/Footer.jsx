@@ -35,7 +35,8 @@ function Footer() {
       {/* Social Links */}
       <div className="flex pt-4 items-center text-white justify-center gap-4">
         <a
-          href="#"
+          href="https://www.instagram.com/aerodometechnologies/"
+          target="_blank"
           aria-label="Instagram"
           className="hover:text-blue-500 transition-colors flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-[#ffffff0a] rounded-full"
         >
@@ -49,14 +50,16 @@ function Footer() {
           <TwitterIcon className="w-5 h-5" />
         </a> */}
         <a
-          href="#"
+          href="http://www.youtube.com/@AeroDomeTechnologies"
+          target="_blank"
           aria-label="YouTube"
           className="hover:text-blue-500 transition-colors flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-[#ffffff0a] rounded-full"
         >
           <YoutubeIcon className="w-5 h-5" />
         </a>
         <a
-          href="#"
+          href="https://www.linkedin.com/company/aerodome-technologies/"
+          target="_blank"
           aria-label="LinkedIn"
           className="hover:text-blue-500 transition-colors flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-[#ffffff0a] rounded-full"
         >
