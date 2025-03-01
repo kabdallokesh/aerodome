@@ -30,7 +30,7 @@ function HeroSection() {
           loop
           muted
           className="flex md:hidden h-[100vh] z-[-20]"
-          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1738839708/mobileAerodome_gj8owx.mp4"
+          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1740866896/test_vid_-_Made_with_Clipchamp_1_f2oj3t.mp4"
         ></video>
         <video
           alt="Drone"
@@ -38,7 +38,7 @@ function HeroSection() {
           loop
           muted
           className="hidden md:flex w-[100vw] z-[-20]"
-          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1738839292/Untitled_video_-_Made_with_Clipchamp_1_veqy20.mp4"
+          src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1740867151/test_vid_-_Made_with_Clipchamp_2_nmoisk.mp4"
         ></video>
 
         {/* Dark Overlay */}

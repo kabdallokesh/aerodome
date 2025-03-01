@@ -50,9 +50,9 @@ function ContactUs() {
     setIsSending(true);
 
     // EmailJS configuration
-    const serviceID = ""; // Replace with your EmailJS service ID
-    const templateID = ""; // Replace with your EmailJS template ID
-    const userID = ""; // Replace with your EmailJS user ID
+    const serviceID = "service_u3d1pmg"; // Replace with your EmailJS service ID
+    const templateID = "template_db1ejwh"; // Replace with your EmailJS template ID
+    const userID = "3d7215XYxRMlGM79J"; // Replace with your EmailJS user ID
 
     try {
       await emailjs.send(
@@ -67,15 +67,19 @@ function ContactUs() {
         },
         userID
       );
-
       setSent(true);
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
+
+      setTimeout(() => {
+        setSent(false);
+      }, 2000);
+
+      // setFormData({
+      //   firstName: "",
+      //   lastName: "",
+      //   email: "",
+      //   phone: "",
+      //   message: "",
+      // });
     } catch (error) {
       console.error("Error sending email:", error);
       alert(
@@ -284,9 +288,10 @@ function ContactUs() {
               />
               <button
                 type="submit"
+                disabled={isSending}
                 className={`w-full bg-blue-600 ${
                   sent === true && "disabled"
-                }hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition-colors`}
+                } hover:bg-blue-500 text-white disabled:cursor-not-allowed font-medium py-3 rounded-lg transition-colors`}
               >
                 {sent === true ? "Message Sent Successfully" : "Send Message"}
               </button>

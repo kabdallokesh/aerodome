@@ -93,6 +93,19 @@ function Portfolio() {
             </div>
           </motion.div>
         </div>
+        <motion.div
+          className="relative w-full rounded-xl overflow-hidden border-2 mb-6 border-[#FFFFFF1A] bg-[#181818] p-4"
+          variants={childVariant}
+        >
+          <video
+            controls
+            className=" aspect-auto w-full md:w-full"
+            src="https://res.cloudinary.com/dwtytn7fl/video/upload/v1740865044/wedding_all_formation_V2_xqs4de.mp4"
+          ></video>
+          <div className=" bottom-4 mt-4 text-white bg-black opacity-60 p-3  w-full  shadow-2xl shadow-black">
+            <h3 className="font-bold">Wedding Show</h3>
+          </div>
+        </motion.div>
       </motion.div>
     </div>
   );

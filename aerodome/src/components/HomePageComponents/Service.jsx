@@ -10,14 +10,6 @@ function Service({ Headtxt, txt, img, style, orderOne, orderTwo }) {
   };
   return (
     <div className={`text-left flex items-center gap-3 ${style}`}>
-      <div className={`flex flex-col justify-end md:items-end ${orderOne}`}>
-        <SubHeading txt={Headtxt} textColor={"white"} />
-        {txt === 'customer-centric' ? <p className="text-left md:text-right md:w-[100%] text-white/60 flex flex-col">Crafting personalised visuals, turning moments into cherished memories that touch the heart.<span>“We care for your emotions”</span></p> : <NormalText
-          txt={txt}
-          txtStyle={"md:text-right md:w-[100%] text-white/60"}
-        />}
-       
-      </div>
       <motion.div
         initial="hidden"
         variants={fadeIn}
@@ -30,6 +22,21 @@ function Service({ Headtxt, txt, img, style, orderOne, orderTwo }) {
           <UserCheck className="text-white mx-2 w-6 h-6" />
         )}
       </motion.div>
+      <div className={`flex flex-col justify-end md:items-start ${orderOne}`}>
+        <SubHeading txt={Headtxt} textColor={"white"} />
+        {txt === "customer-centric" ? (
+          <p className="text-left md:text-left md:w-[100%] text-white/60 flex flex-col">
+            Crafting personalised visuals, turning moments into cherished
+            memories that touch the heart.
+            <span>“We care for your emotions”</span>
+          </p>
+        ) : (
+          <NormalText
+            txt={txt}
+            txtStyle={"md:text-left md:w-[100%] text-white/60"}
+          />
+        )}
+      </div>
     </div>
   );
 }
