@@ -97,7 +97,7 @@ function HeroSection() {
     <div className="relative w-full h-screen bg-gradient-to-b from-slate-900 via-black-900 to-black overflow-hidden font-sans">
       {/* Background Stars */}
       <div className="absolute inset-0 z-0">
-        {Array.from({ length: 80 }).map((_, i) => (
+        {Array.from({ length: 100 }).map((_, i) => (
           <motion.div
             key={i}
             className="absolute bg-white rounded-full opacity-60"
@@ -191,11 +191,21 @@ function HeroSection() {
               />
 
               {/* Earth */}
-              <img
+              {/* <img
                 src="/cropped_circle_image.png"
                 alt="Earth"
                 className="relative z-10 w-full h-full object-cover rounded-full shadow-[0_0_120px_rgba(0,0,0,0.8)]"
-              />
+              /> */}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="relative z-10 w-full h-full object-cover rounded-full shadow-[0_0_120px_rgba(0,0,0,0.8)]"
+              >
+                <source src="/earth_rotate.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </motion.div>
         </div>
