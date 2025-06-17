@@ -14,19 +14,19 @@ function Footer() {
         <Link to="/" className="cursor-pointer">
           Home
         </Link>
-        <Link to="/technology" className="cursor-pointer">
+        {/* <Link to="/technology" className="cursor-pointer">
           Technology
-        </Link>
-        <Link to="/portfolio" className="cursor-pointer">
+        </Link> */}
+        {/* <Link to="/portfolio" className="cursor-pointer">
           Portfolio
-        </Link>
+        </Link> */}
 
         <Link to="/team" className="cursor-pointer">
           Team
         </Link>
-        <Link to="/contact-us" className="cursor-pointer">
+        {/* <Link to="/contact-us" className="cursor-pointer">
           Contact
-        </Link>
+        </Link> */}
         {/* <Link to="/contact-us" className="cursor-pointer">
           Privacy Policy
         </Link> */}
@@ -34,14 +34,14 @@ function Footer() {
 
       {/* Social Links */}
       <div className="flex pt-4 items-center text-white justify-center gap-4">
-        <a
+        {/* <a
           href="https://www.instagram.com/aerodometechnologies/"
           target="_blank"
           aria-label="Instagram"
           className="hover:text-blue-500 transition-colors flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-[#ffffff0a] rounded-full"
         >
           <InstagramIcon className="w-5 h-5" />
-        </a>
+        </a> */}
         {/* <a
           href="#"
           aria-label="Twitter"
@@ -49,14 +49,14 @@ function Footer() {
         >
           <TwitterIcon className="w-5 h-5" />
         </a> */}
-        <a
+        {/* <a
           href="http://www.youtube.com/@AeroDomeTechnologies"
           target="_blank"
           aria-label="YouTube"
           className="hover:text-blue-500 transition-colors flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-[#ffffff0a] rounded-full"
         >
           <YoutubeIcon className="w-5 h-5" />
-        </a>
+        </a> */}
         <a
           href="https://www.linkedin.com/company/aerodome-technologies/"
           target="_blank"
@@ -69,7 +69,12 @@ function Footer() {
 
       {/* Footer Text */}
       <div className="text-white pt-4 text-center text-[12px] sm:text-[14px]">
-        <p>©️2024 AeroDome || All Right Reserved</p>
+        <p>info@aerodome.tech</p>
+      </div>
+      <div className="text-white pt-4 text-center text-[12px] sm:text-[14px]">
+        <p className="text-sm text-white/60 text-center mt-4">
+          © 2024 <b>AeroDome</b> &nbsp;|&nbsp; All Rights Reserved
+        </p>
       </div>
     </div>
   );
