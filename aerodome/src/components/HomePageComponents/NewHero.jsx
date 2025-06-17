@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import EarthVideo from "./EarthVideo";
 
 // Reusable component to render one group of satellites
 function SatelliteOrbit({ satellites, rotate, offset, className }) {
@@ -196,16 +197,7 @@ function HeroSection() {
                 alt="Earth"
                 className="relative z-10 w-full h-full object-cover rounded-full shadow-[0_0_120px_rgba(0,0,0,0.8)]"
               /> */}
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="relative z-10 w-full h-full object-cover rounded-full shadow-[0_0_120px_rgba(0,0,0,0.8)]"
-              >
-                <source src="/earth_rotate.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <EarthVideo />
             </div>
           </motion.div>
         </div>
