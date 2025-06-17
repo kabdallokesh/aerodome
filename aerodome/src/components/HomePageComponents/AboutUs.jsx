@@ -58,28 +58,25 @@ function AboutUs() {
           </div>
           <div className="flex flex-col items-center md:items-start">
             <NormalText
-              txt={
-                "AeroDome was founded in 2023 by three alumni from the Indian Institute of Technology Madras. They previously worked together as part of the core team of Avishkar Hyperloop, a student team at IIT Madras developing hyperloop technologies for the world, and received $1.25M in funding for Avishkar from the Railway Ministry & other corporates. They were among the top three teams globally for hyperloop development."
-              }
+              txt={`<b>AeroDome</b> was founded in 2023 by three alumni from the <b>Indian Institute of Technology Madras</b>. They previously worked together as ex-heads of <b>Avishkar Hyperloop</b>, a student team at IIT Madras developing hyperloop technologies for the world and received $1.25M in funding for Avishkar from the Railway Ministry & other corporates. They were among the top three teams globally for hyperloop development and were involved in development of <b>World's first and largest hyperloop ecosystem</b> (with <b>422m</b> Hyperloop Tube, Track and Vacuum Facility).`}
               txtStyle={"text-white/60 text-center md:text-left"}
             />
+
             <NormalText
-              txt={
-                "AeroDome is an NSRCEL, IIM Bangalore incubated startup, and supported by various top incubators of the country including Deshpande Startups, SSN iFound, and VELTECH TBI. The team consists of brilliant individuals from diverse backgrounds along with seasoned industry experts and top mentors from the startup ecosystem, who advise on both the technology and business front."
-              }
+              txt={`Following their success at Avishkar Hyperloop, they transitioned to working on <b>Drone and Swarm technology</b>, and started commercializing with fleet of 60 drones. While working in the drone sector, the team realized a significant <b>global issue</b> in the existing GNSS infrastructure and are now developing <b>India’s First Private Global PNT Satellite Constellation</b> to deliver more <b>precise</b> and <b>secure</b> Positioning, Navigation, and Timing (<b>PNT</b>) services worldwide. The team consists of brilliant individuals along with seasoned industry experts, top advisors and mentors, who advise them on both the technology and business front.`}
               txtStyle={"mt-3  text-white/60  text-center md:text-left"}
             />
-            <motion.div
+            {/* <motion.div
               initial="hidden"
               variants={fadeIn}
               whileInView={"visible"}
               className="mt-5"
             >
               <Button txt={"Contact Us"} link={"/contact-us"} />
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
-        <div>
+        {/* <div>
           <SubHeading
             txt={"SUPPORTED BY"}
             textCase={false}
@@ -110,7 +107,7 @@ function AboutUs() {
               className="w-1/5 h-10 md:h-14  mx-auto bg-transparent"
             />
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

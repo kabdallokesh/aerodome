@@ -57,22 +57,22 @@ function Navbar() {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               to="/technology"
               className={`cursor-pointer ${
                 currentPage === "/technology" && "text-[#2563EB]"
               }`}
             >
               Technology
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               to="/portfolio"
               className={`cursor-pointer ${
                 currentPage === "/portfolio" && "text-[#2563EB]"
               }`}
             >
               Portfolio
-            </Link>
+            </Link> */}
             <Link
               to="/team"
               className={`cursor-pointer ${
@@ -81,14 +81,14 @@ function Navbar() {
             >
               Team
             </Link>
-            <Link
+            {/* <Link
               to="/contact-us"
               className={`cursor-pointer ${
                 currentPage === "/contact-us" && "text-[#2563EB]"
               }`}
             >
-              Contact Us
-            </Link>
+              Contact
+            </Link> */}
           </div>
           {/* <Button txt=" Contact Us" link="/contact-us" /> */}
           {/* <Sun className="cursor-pointer" /> */}
@@ -122,7 +122,7 @@ function Navbar() {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             to="/technology"
             className={`cursor-pointer text-[16px] ${
               currentPage === "/technology" && "text-[#2563EB]"
@@ -130,8 +130,8 @@ function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Technology
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             to="/portfolio"
             className={`cursor-pointer text-[16px] ${
               currentPage === "/portfolio" && "text-[#2563EB]"
@@ -139,7 +139,7 @@ function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Portfolio
-          </Link>
+          </Link> */}
           <Link
             to="/team"
             className={`cursor-pointer text-[16px] ${
@@ -149,7 +149,7 @@ function Navbar() {
           >
             Team
           </Link>
-          <Link
+          {/* <Link
             to="/contact-us"
             className={`cursor-pointer text-[16px] ${
               currentPage === "/contact-us" && "text-[#2563EB]"
@@ -157,7 +157,7 @@ function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact Us
-          </Link>
+          </Link> */}
           {/* <Button txt=" Contact Us" link="/contact-us" /> */}
         </div>
       )}
