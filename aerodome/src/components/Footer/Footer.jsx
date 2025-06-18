@@ -7,6 +7,8 @@ import {
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className="w-full h-auto flex flex-col pt-4 justify-center z-[100] p-6 bg-[#0F0F0F] top-0 items-center">
       {/* Navigation Links */}
@@ -73,7 +75,7 @@ function Footer() {
       </div>
       <div className="text-white pt-4 text-center text-[12px] sm:text-[14px]">
         <p className="text-sm text-white/60 text-center mt-4">
-          © 2024 <b>AeroDome</b> &nbsp;|&nbsp; All Rights Reserved
+          © {currentYear} <b>AeroDome</b> &nbsp;|&nbsp; All Rights Reserved
         </p>
       </div>
     </div>

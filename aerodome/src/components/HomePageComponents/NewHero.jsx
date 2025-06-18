@@ -122,7 +122,7 @@ function HeroSection() {
       </div>
 
       {/* Foreground Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20 text-white">
+      <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-20 text-white pt-20 md:pt-0">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
           {/* LEFT */}
           <motion.div
@@ -133,7 +133,7 @@ function HeroSection() {
           >
             <motion.h1
               variants={slideUpVariant}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-xl mt-10"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-xl mt-0 md:mt-10"
             >
               India's First & Largest Private
               <br />
@@ -145,13 +145,13 @@ function HeroSection() {
 
             <motion.div
               variants={slideUpVariant}
-              className="mt-10 inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-orange-500/30 to-red-500/30 border border-orange-400/50 backdrop-blur-md shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="mt-6 md:mt-10 inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 rounded-full bg-gradient-to-r from-orange-500/30 to-red-500/30 border border-orange-400/50 backdrop-blur-md shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
             >
               <div className="relative">
-                <div className="w-3 h-3 bg-orange-400 rounded-full" />
-                <div className="absolute inset-0 w-3 h-3 bg-orange-400 rounded-full animate-ping" />
+                <div className="w-2 h-2 md:w-3 md:h-3 bg-orange-400 rounded-full" />
+                <div className="absolute inset-0 w-2 h-2 md:w-3 md:h-3 bg-orange-400 rounded-full animate-ping" />
               </div>
-              <span className="text-3xl md:text-3xl font-semibold text-orange-200 tracking-wide">
+              <span className="text-lg md:text-2xl lg:text-3xl font-semibold text-orange-200 tracking-wide">
                 Coming Soon...
               </span>
             </motion.div>
