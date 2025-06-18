@@ -6,14 +6,14 @@ function NormalText({ txt, txtStyle }) {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
   return (
-   <motion.p
-  initial="hidden"
-  variants={fadeIn}
-  whileInView="visible"
-  className={txtStyle}
-  dangerouslySetInnerHTML={{ __html: txt }}
-/>
-
+    <motion.p
+      initial="hidden"
+      variants={fadeIn}
+      whileInView="visible"
+      className={txtStyle}
+      style={{ textAlign: "justify" }}
+      dangerouslySetInnerHTML={{ __html: txt }}
+    />
   );
 }
 
