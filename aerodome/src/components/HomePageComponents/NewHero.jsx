@@ -135,7 +135,8 @@ function HeroSection() {
               variants={slideUpVariant}
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-xl mt-10"
             >
-              India's First Private <br />
+              India's First Private & Largest
+              <br />
               <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Global PNT Satellite
               </span>{" "}

@@ -58,12 +58,17 @@ function AboutUs() {
           </div>
           <div className="flex flex-col items-center md:items-start">
             <NormalText
-              txt={`<b>AeroDome</b> was founded in 2023 by three alumni from the <b>Indian Institute of Technology Madras</b>. They previously worked together as ex-heads of <b>Avishkar Hyperloop</b>, a student team at IIT Madras developing hyperloop technologies for the world and received $1.25M in funding for Avishkar from the Railway Ministry & other corporates. They were among the top three teams globally for hyperloop development and were involved in development of <b>World's first and largest hyperloop ecosystem</b> (with <b>422m</b> Hyperloop Tube, Track and Vacuum Facility).`}
+              txt={`AeroDome was founded in 2023 by three alumni of the Indian Institute of Technology Madras, who previously led Avishkar Hyperloop, the premier student team pioneering hyperloop technologies in India. Under their leadership, Avishkar secured $1.25 million in funding from the Ministry of Railways and leading corporations and ranked among the top three hyperloop teams globally. Their efforts contributed to the development of the world’s first and largest academic hyperloop ecosystem, featuring a 422-meter-long hyperloop tube, test track, and vacuum facility.`}
               txtStyle={"text-white/60 text-center md:text-left"}
             />
 
             <NormalText
-              txt={`Following their success at Avishkar Hyperloop, they transitioned to working on <b>Drone and Swarm technology</b>, and started commercializing with fleet of 60 drones. While working in the drone sector, the team realized a significant <b>global issue</b> in the existing GNSS infrastructure and are now developing <b>India’s First Private Global PNT Satellite Constellation</b> to deliver more <b>precise</b> and <b>secure</b> Positioning, Navigation, and Timing (<b>PNT</b>) services worldwide. The team consists of brilliant individuals along with seasoned industry experts, top advisors and mentors, who advise them on both the technology and business front.`}
+              txt={`Building on this foundation of innovation, the founders transitioned into the field of drone and swarm technologies, launching commercial operations with a fleet of 60 drones. During this phase, they identified a critical gap in the global GNSS (Global Navigation Satellite System) infrastructure, particularly in terms of precision and security.`}
+              txtStyle={"mt-3  text-white/60  text-center md:text-left"}
+            />
+
+            <NormalText
+              txt={`In response, AeroDome is now developing India’s first and largest private Global PNT (Positioning, Navigation, and Timing) Satellite Constellation, designed to deliver highly accurate and secure PNT services worldwide. The company is backed by a high-caliber team of technologists, seasoned industry experts, and strategic advisors who guide its growth across both technological and business dimensions.`}
               txtStyle={"mt-3  text-white/60  text-center md:text-left"}
             />
             {/* <motion.div
