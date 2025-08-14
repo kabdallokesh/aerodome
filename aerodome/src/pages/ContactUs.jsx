@@ -151,12 +151,14 @@ function ContactUs() {
           variants={fadeIn}
         >
           {/* Main CTA Card */}
-          <div className="w-full bg-gradient-to-r from-[#1a1a2e] to-[#16213e] rounded-3xl p-12 md:p-16 border border-white/10 shadow-2xl">
+          <div className="w-full bg-gradient-to-r from-[#1a1a2e] to-[#16213e] rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-white leading-tight mb-6"
               variants={slideUp}
             >
               Ready to Experience the Future of{" "}
+              <br />
+              <div className="h-4"></div>
               <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Navigation?
               </span>

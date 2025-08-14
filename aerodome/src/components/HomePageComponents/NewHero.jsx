@@ -68,9 +68,12 @@ function HeroSection() {
             >
               INDIA's First & Largest Private
               <br />
+              <div className="h-1 md:h-2 lg:h-3"></div>
               <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Global PNT Satellite
               </span>{" "}
+              <br />
+              <div className="h-1 md:h-2 lg:h-3"></div>
               Constellation
             </motion.h1>
 
