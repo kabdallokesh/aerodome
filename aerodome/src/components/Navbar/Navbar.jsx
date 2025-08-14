@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { X } from "lucide-react";
+import { X, ChevronDown } from "lucide-react";
 import PropTypes from "prop-types";
 
 function HamburgerIcon({ open, onClick }) {
@@ -33,22 +33,30 @@ HamburgerIcon.propTypes = {
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const location = useLocation();
   const currentPage = location.pathname;
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight =
-        document.querySelector("#hero-section")?.offsetHeight || 0;
-      if (window.scrollY > heroHeight) {
+      // More responsive scroll detection - trigger earlier for better UX
+      if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
     };
 
+    // Force initial state to transparent and ensure it stays transparent
+    setIsScrolled(false);
+
+    // Immediately set transparent state
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   // Prevent background scroll when menu is open
@@ -65,20 +73,27 @@ function Navbar() {
 
   return (
     <div
-      className={`w-full h-[8vh] md:h-[12vh] flex justify-center z-[100] sticky top-0 items-center transition-colors duration-300 ${isScrolled ? "bg-[#0F0F0F]" : "bg-transparent"
-        }`}
+      className={`w-full h-[8vh] md:h-[12vh] flex justify-center z-[100] sticky top-0 items-center transition-all duration-500 bg-transparent`}
+      style={{
+        backgroundColor: 'transparent !important',
+        backdropFilter: isScrolled ? 'blur(1px)' : 'none',
+        borderBottom: 'none',
+        boxShadow: isScrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)' : 'none',
+        background: 'none !important',
+        backgroundImage: 'none !important'
+      }}
     >
       <div className="h-[6vh] md:h-[10vh] flex items-center font-bold justify-between px-4 w-[95%] md:w-[92%]">
         {/* Logo */}
         <Link to={"/"}>
           <img
-            src="MobileLogo.png"
+            src="/MobileLogo.png"
             className="w-16 flex md:hidden"
             alt="logo"
           />
           <img
-            src="logo.png"
-            className="w-[70%] md:w-[50%] hidden md:flex"
+            src="/logo.png"
+            className="w-[70%] md:w-[30%] hidden md:flex"
             alt="logo"
           />
         </Link>
@@ -93,22 +108,48 @@ function Navbar() {
             >
               Home
             </Link>
-            {/* <Link
-              to="/technology"
-              className={`cursor-pointer ${
-                currentPage === "/technology" && "text-[#2563EB]"
-              }`}
-            >
-              Technology
-            </Link> */}
-            {/* <Link
-              to="/portfolio"
-              className={`cursor-pointer ${
-                currentPage === "/portfolio" && "text-[#2563EB]"
-              }`}
-            >
-              Portfolio
-            </Link> */}
+
+            {/* Products Dropdown */}
+            <div className="relative group">
+              <button
+                onMouseEnter={() => setIsProductsDropdownOpen(true)}
+                onMouseLeave={() => setIsProductsDropdownOpen(false)}
+                className={`flex items-center gap-1 cursor-pointer transition-colors duration-200 ${(currentPage === "/products" || currentPage.startsWith("/products/")) && "text-[#2563EB]"
+                  }`}
+              >
+                Products
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProductsDropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {/* Dropdown Menu */}
+              {isProductsDropdownOpen && (
+                <div
+                  className="absolute top-full left-[-8px] mt-0 w-40 z-50"
+                  onMouseEnter={() => setIsProductsDropdownOpen(true)}
+                  onMouseLeave={() => setIsProductsDropdownOpen(false)}
+                >
+                  <div className="py-2">
+                    <Link
+                      to="/products/vnss"
+                      className="flex items-center gap-3 px-3 py-3 text-white hover:bg-white/10 transition-all duration-200 group rounded-lg"
+                      onClick={() => setIsProductsDropdownOpen(false)}
+                    >
+                      {/* Simple Satellite Icon */}
+                      <div className="w-5 h-5 text-blue-400">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" />
+                        </svg>
+                      </div>
+
+                      <span className="font-medium text-white group-hover:text-blue-400 transition-colors duration-200">
+                        VNSS
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
+
             <Link
               to="/team"
               className={`cursor-pointer ${currentPage === "/team" && "text-[#2563EB]"
@@ -116,17 +157,14 @@ function Navbar() {
             >
               Team
             </Link>
-            {/* <Link
+            <Link
               to="/contact-us"
-              className={`cursor-pointer ${
-                currentPage === "/contact-us" && "text-[#2563EB]"
-              }`}
+              className={`cursor-pointer ${currentPage === "/contact-us" && "text-[#2563EB]"
+                }`}
             >
               Contact
-            </Link> */}
+            </Link>
           </div>
-          {/* <Button txt=" Contact Us" link="/contact-us" /> */}
-          {/* <Sun className="cursor-pointer" /> */}
         </div>
 
         {/* Mobile Menu Button */}
@@ -162,6 +200,22 @@ function Navbar() {
           >
             Home
           </Link>
+
+          {/* Mobile Products Section */}
+          <div className="py-2">
+            <div className="text-[18px] text-white/90 mb-2">Products</div>
+            <div className="ml-4 space-y-2">
+              <Link
+                to="/products/vnss"
+                className={`cursor-pointer text-[16px] block py-1 ${currentPage === "/products/vnss" && "text-[#2563EB]"
+                  }`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                VNSS
+              </Link>
+            </div>
+          </div>
+
           <Link
             to="/team"
             className={`cursor-pointer text-[18px] block py-2 ${currentPage === "/team" && "text-[#2563EB]"
@@ -169,6 +223,14 @@ function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Team
+          </Link>
+          <Link
+            to="/contact-us"
+            className={`cursor-pointer text-[18px] block py-2 ${currentPage === "/contact-us" && "text-[#2563EB]"
+              }`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Contact
           </Link>
         </div>
       </div>

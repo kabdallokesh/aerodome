@@ -1,20 +1,14 @@
 "use client";
 import {
-  InstagramIcon,
-  YoutubeIcon,
   LinkedinIcon,
   Mail,
-  Phone,
-  MapPinHouse,
   MailIcon,
-  PhoneCallIcon,
-  MapPin,
+  Send,
 } from "lucide-react";
-import Heading from "../components/TextComponents/Heading";
-import SubHeading from "../components/TextComponents/SubHeading";
-import { useState } from "react";
-import { motion } from "framer-motion"; // Import framer-motion for animations
-import emailjs from "@emailjs/browser"; // Import EmailJS
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -27,6 +21,11 @@ function ContactUs() {
 
   const [isSending, setIsSending] = useState(false);
   const [sent, setSent] = useState(false);
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init("3d7215XYxRMlGM79J");
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -50,9 +49,9 @@ function ContactUs() {
     setIsSending(true);
 
     // EmailJS configuration
-    const serviceID = "service_u3d1pmg"; // Replace with your EmailJS service ID
-    const templateID = "template_db1ejwh"; // Replace with your EmailJS template ID
-    const userID = "3d7215XYxRMlGM79J"; // Replace with your EmailJS user ID
+    const serviceID = "service_00d4lai";
+    const templateID = "template_cwi85bb";
+    const userID = "JmCADkU8kK2sGcuy_";
 
     try {
       await emailjs.send(
@@ -69,17 +68,18 @@ function ContactUs() {
       );
       setSent(true);
 
+      // Reset form after successful submission
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: "",
+      });
+
       setTimeout(() => {
         setSent(false);
-      }, 2000);
-
-      // setFormData({
-      //   firstName: "",
-      //   lastName: "",
-      //   email: "",
-      //   phone: "",
-      //   message: "",
-      // });
+      }, 3000);
     } catch (error) {
       console.error("Error sending email:", error);
       alert(
@@ -90,217 +90,294 @@ function ContactUs() {
     }
   };
 
-  // Animation Variants for Framer Motion
+  // Animation Variants
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const slideUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <div className="px-4 sm:px-6 md:px-16 lg:px-20 pt-10 items-center flex flex-col">
-      {/* Header Section */}
-      <motion.div
-        className="w-full md:w-2/3 lg:w-[70%] items-center flex flex-col gap-4 text-center"
-        initial="hidden"
-        animate="visible"
-        variants={fadeIn}
-      >
-        <SubHeading
-          txt={"contact us"}
-          textStyle={"text-xl"}
-          textColor={"blue"}
-          textCase={true}
-        />
-        <Heading
-          txt={"We’d love to hear from you"}
-          textStyle={"mb-6 md:mb-0"}
-        />
-        {/* <p className="text-[14px] sm:text-[16px] text-zinc-400">
-          Get in touch if you need any help or want to share feedback about
-          Aerodome.
-          <br />
-          We respond back within a business day.
-        </p> */}
-      </motion.div>
+    <div className="min-h-screen relative overflow-hidden font-sans">
+      {/* Animated Background Stars - global behind content */}
+      <div className="absolute inset-0 z-0">
+        {Array.from({ length: 100 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute bg-white rounded-full opacity-60"
+            style={{
+              width: Math.random() * 2 + 1,
+              height: Math.random() * 2 + 1,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              opacity: [0.3, 1, 0.3],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: Math.random() * 3 + 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
 
-      {/* Content Section */}
-      <motion.div
-        className="min-h-auto text-white p-4 sm:p-8 bg-transparent w-full"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeIn}
-      >
-        <div className="max-w-6xl mx-auto border-2 border-[#FFFFFF1A] rounded-3xl bg-[#FFFFFF0A] p-6 sm:p-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Left Column */}
-            <motion.div
-              className="space-y-6 sm:space-y-8 flex flex-col justify-center bg-transparent"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
+      {/* Space gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black z-0"></div>
+
+
+      {/* Hero Section */}
+      <div id="hero-section" className="relative z-10 h-screen flex flex-col justify-center px-6 md:px-20 text-white mt-[-16vh] md:mt-[-20vh]">
+        <motion.div
+          className="w-full max-w-4xl mx-auto items-center flex flex-col gap-8 text-center"
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+        >
+          {/* Main CTA Card */}
+          <div className="w-full bg-gradient-to-r from-[#1a1a2e] to-[#16213e] rounded-3xl p-12 md:p-16 border border-white/10 shadow-2xl">
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              variants={slideUp}
             >
-              {/* Email Section */}
-              <div className="flex items-start gap-4 bg-transparent ">
-                <Mail className="w-7 text-white rounded-full p-1 h-7 mt-1 bg-blue-500" />
-                <div>
-                  <h3 className="font-medium text-[18px] sm:text-[20px] mb-1">
-                    Email
-                  </h3>
-                  <p className="text-white text-[14px] sm:text-[16px] flex flex-col gap-1">
-                    <span className="flex gap-2 items-center">
-                      <MailIcon className="w-4 h-4" />
-                      info@aerodome.tech{" "}
-                    </span>
-                    <span className="flex gap-2 items-center">
-                      <MailIcon className="w-4 h-4" />
-                      vibhor@aerodome.tech
-                    </span>
-                  </p>
+              Ready to Experience the Future of{" "}
+              <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Navigation?
+              </span>
+            </motion.h1>
+
+            <motion.p
+              className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed"
+              variants={slideUp}
+            >
+              Join the revolution in satellite navigation technology. Contact our team to learn how VNSS can transform your operations.
+            </motion.p>
+
+            <motion.button
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+              variants={slideUp}
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Get Started Today
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </motion.button>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 px-6 md:px-20 pb-16">
+
+        {/* Main Content Section */}
+        <motion.div
+          className="max-w-7xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            {/* Left Column - Contact Information */}
+            <motion.div
+              className="space-y-8"
+              variants={slideUp}
+            >
+              {/* Get In Touch Section */}
+              <div className="bg-gradient-to-br from-[#0F0F0F] to-[#1a1a1a] border border-[#FFFFFF1A] rounded-2xl p-8 backdrop-blur-sm">
+                <h2 className="text-2xl font-bold text-white mb-8">
+                  Get In Touch
+                </h2>
+
+                {/* Email Section */}
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="flex-shrink-0 w-12 h-12 border border-white/20 rounded-xl flex items-center justify-center bg-white/5">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-[18px] text-white mb-2">
+                      Email
+                    </h3>
+                    <div className="space-y-2">
+                      <a
+                        href="mailto:info@vyomic.space"
+                        className="text-zinc-300 hover:text-blue-400 transition-colors flex items-center gap-2 text-[15px]"
+                      >
+                        <MailIcon className="w-4 h-4" />
+                        info@vyomic.space
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Contact Number Section */}
-              <div className="flex items-start gap-4">
-                <Phone className="w-7 text-white rounded-full p-1 h-7 mt-1 bg-blue-500" />
-                <div>
-                  <h3 className="font-medium text-[18px] sm:text-[20px] mb-1">
-                    Contact Number
-                  </h3>
-                  <p className="text-white text-[14px] sm:text-[16px] flex gap-2 items-center">
-                    <PhoneCallIcon className="w-4 h-4" /> +91 7358322001
-                  </p>
-                </div>
-              </div>
-
-              {/* Address Section */}
-              <div className="flex items-start gap-4">
-                <MapPinHouse className="w-8 text-white rounded-full p-1 h-8 mt-1 bg-blue-500" />
-                <div>
-                  <h3 className="font-medium text-[18px] sm:text-[20px] mb-1">
-                    Address
-                  </h3>
-                  <p className="text-white text-[14px] sm:text-[16px] flex gap-2 ">
-                    <MapPin className="w-6 md:w-4 h-4 mt-1 md:mt-2" />
-                    1st Floor, SSN iFound, SSN College of Engineering,
-                    <br />
-                    Thiruporur, Kalavakkam, Chennai, Tamil Nadu 603110
-                  </p>
-                </div>
-              </div>
-              {/* Social Links */}
-              <div className="flex flex-col md:flex-row items-center gap-4">
-                <h3 className="text-[18px] sm:text-[20px] text-white font-semibold">
-                  Connect with us:
+              {/* Follow Our Journey Section */}
+              <div className="bg-gradient-to-br from-[#0F0F0F] to-[#1a1a1a] border border-[#FFFFFF1A] rounded-2xl p-8 backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-white mb-6">
+                  Follow Our Journey
                 </h3>
-                <div className="flex items-center gap-4">
-                  {/* <a
-                    href="https://www.instagram.com/aerodometechnologies/"
-                    target="_blank"
-                    aria-label="Instagram"
-                    className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
-                  >
-                    <InstagramIcon className="w-5 h-5" />
-                  </a> */}
-                  {/* <a
-                    href="#"
-                    aria-label="Twitter"
-                    className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
-                  >
-                    <TwitterIcon className="w-5 h-5" />
-                  </a> */}
-                  {/* <a
-                    href="http://www.youtube.com/@AeroDomeTechnologies"
-                    target="_blank"
-                    aria-label="YouTube"
-                    className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
-                  >
-                    <YoutubeIcon className="w-5 h-5" />
-                  </a> */}
+                <div className="space-y-4">
+                  {/* LinkedIn */}
                   <a
-                    href="https://www.linkedin.com/company/aerodome-technologies/"
+                    href="https://www.linkedin.com/company/vyomic"
                     target="_blank"
-                    aria-label="LinkedIn"
-                    className="hover:text-blue-500 transition-colors flex items-center justify-center w-10 h-10 bg-[#ffffff0a] rounded-full"
+                    rel="noopener noreferrer"
+                    aria-label="Connect with us on LinkedIn"
+                    className="group flex items-center gap-4 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
                   >
-                    <LinkedinIcon className="w-5 h-5" />
+                    <div className="flex-shrink-0 w-12 h-12 border border-white/20 rounded-xl flex items-center justify-center bg-white/5 group-hover:border-white/40 group-hover:bg-white/10 transition-all duration-300">
+                      <LinkedinIcon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-white text-[15px] mb-1 group-hover:text-blue-400 transition-colors duration-300">Connect with us on LinkedIn</p>
+                      <p className="text-zinc-400 text-[13px] group-hover:text-blue-300 transition-colors duration-300">Stay updated with our latest developments</p>
+                    </div>
+                  </a>
+
+                  {/* X (Twitter) */}
+                  <a
+                    href="https://x.com/VyomIC_Space"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Follow us on X (Twitter)"
+                    className="group flex items-center gap-4 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 border border-white/20 rounded-xl flex items-center justify-center bg-white/5 group-hover:border-white/40 group-hover:bg-white/10 transition-all duration-300">
+                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-white text-[15px] mb-1 group-hover:text-blue-400 transition-colors duration-300">Follow us on X</p>
+                      <p className="text-zinc-400 text-[13px] group-hover:text-blue-300 transition-colors duration-300">Stay updated with our latest developments</p>
+                    </div>
                   </a>
                 </div>
               </div>
             </motion.div>
 
             {/* Right Column - Contact Form */}
-            <motion.form
-              onSubmit={handleSubmit}
-              className="space-y-4"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeIn}
+            <motion.div
+              id="contact-form"
+              className="bg-gradient-to-br from-[#0F0F0F] to-[#1a1a1a] border border-[#FFFFFF1A] rounded-2xl p-8 backdrop-blur-sm"
+              variants={slideUp}
             >
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  name="firstName"
-                  placeholder="First Name"
-                  value={formData.firstName}
-                  onChange={handleInputChange}
-                  className="bg-zinc-800 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-                <input
-                  type="text"
-                  name="lastName"
-                  placeholder="Last Name"
-                  value={formData.lastName}
-                  onChange={handleInputChange}
-                  className="bg-zinc-800 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  required
-                />
-              </div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleInputChange}
-                className="w-full bg-zinc-800 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                value={formData.phone}
-                onChange={handleInputChange}
-                className="w-full bg-zinc-800 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <textarea
-                name="message"
-                placeholder="Message"
-                rows={4}
-                value={formData.message}
-                onChange={handleInputChange}
-                className="w-full bg-zinc-800 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-              <button
-                type="submit"
-                disabled={isSending}
-                className={`w-full bg-blue-600 ${
-                  sent === true && "disabled"
-                } hover:bg-blue-500 text-white disabled:cursor-not-allowed font-medium py-3 rounded-lg transition-colors`}
-              >
-                {sent === true ? "Message Sent Successfully" : "Send Message"}
-              </button>
-            </motion.form>
+              <h2 className="text-2xl font-bold text-white mb-8 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                Send Us a Message
+              </h2>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="First Name *"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
+                      className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="Last Name *"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
+                      className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address *"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number (Optional)"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  />
+                </div>
+
+                <div>
+                  <textarea
+                    name="message"
+                    placeholder="Your Message *"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="w-full bg-zinc-800/50 border border-zinc-700 rounded-xl p-4 text-white placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                    required
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  className={`w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2 ${sent ? "bg-gradient-to-r from-green-600 to-emerald-600" : ""
+                    }`}
+                >
+                  {isSending ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      Sending...
+                    </>
+                  ) : sent ? (
+                    <>
+                      <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                        <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                      </div>
+                      Message Sent Successfully!
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5" />
+                      Send Message
+                    </>
+                  )}
+                </button>
+              </form>
+            </motion.div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </div>
   );
 }
 
 export default ContactUs;
+
+

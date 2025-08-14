@@ -53,13 +53,23 @@ function AboutUs() {
               textColor={"blue"}
               textStyle={""}
             />
-            <Heading txt={"AeroDome"} textStyle={"text-center md:text-left"} />
+            <Heading txt={"VyomIC"} textStyle={"text-center md:text-left"} />
             {/* <ExpandingCard data={cardsData} /> */}
           </div>
           <div className="flex flex-col items-center md:items-start">
             <NormalText
-              txt={`AeroDome was founded in 2023 by three alumni of the Indian Institute of Technology Madras, who previously led Avishkar Hyperloop, the premier student team pioneering hyperloop technologies in India. Under their leadership, Avishkar secured $1.25 million in funding from the Ministry of Railways and leading corporations and ranked among the top three hyperloop teams globally. Their efforts contributed to the development of the world’s first and largest academic hyperloop ecosystem, featuring a 422-meter-long hyperloop tube, test track, and vacuum facility.`}
+              txt={`VyomIC is the brand identity of AeroDome Technologies for our space initiatives.`}
               txtStyle={"text-white/60 text-center md:text-left"}
+            />
+
+            <NormalText
+              txt={`“Vyom,” derived from Sanskrit for space, and “IC,” symbolizing Indian Constellation, together capture our vision of building a next-generation global satellite constellation that empowers a smarter, stronger, and more connected world.`}
+              txtStyle={"mt-3 text-white/60 text-center md:text-left"}
+            />
+
+            <NormalText
+              txt={`AeroDome was founded in 2023 by three alumni of the Indian Institute of Technology Madras, who previously led Avishkar Hyperloop, the premier student team pioneering hyperloop technologies in India. Under their leadership, Avishkar secured $1.25 million in funding from the Ministry of Railways and leading corporations and ranked among the top three hyperloop teams globally. Their efforts contributed to the development of the world’s first and largest academic hyperloop ecosystem, featuring a 422-meter-long hyperloop tube, test track, and vacuum facility.`}
+              txtStyle={"mt-3 text-white/60 text-center md:text-left"}
             />
 
             <NormalText
