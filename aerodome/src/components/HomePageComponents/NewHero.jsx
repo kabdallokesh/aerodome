@@ -1,66 +1,4 @@
 import { motion } from "framer-motion";
-import EarthVideo from "./EarthVideo";
-
-// Reusable component to render one group of satellites
-function SatelliteOrbit({ satellites, rotate, offset, className }) {
-  return (
-    <div className={`absolute ${className || ""}`} style={{ ...offset }}>
-      {satellites.map((satellite, idx) => {
-        const angle = (360 / satellites.length) * satellite.id; // Sequential angle
-
-        return (
-          <motion.div
-            key={`${rotate}-${satellite.id}`}
-            className="absolute"
-            initial={{ rotate: angle }}
-            animate={{ rotate: angle + rotate }}
-            transition={{
-              duration: satellite.duration,
-              repeat: Infinity,
-              ease: "linear",
-              delay: 0, // all start at once
-            }}
-          >
-            <motion.div
-              className="relative"
-              style={{
-                width: `${220 + satellite.id * 30}px`,
-                height: `${220 + satellite.id * 30}px`,
-                marginLeft: `-${110 + satellite.id * 15}px`,
-                marginTop: `-${110 + satellite.id * 15}px`,
-              }}
-            >
-              <motion.img
-                src="/sat_img.png"
-                alt="Satellite"
-                className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                style={{
-                  width: satellite.size * 8,
-                  height: satellite.size * 8,
-                }}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.8, 1, 0.8],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: 0,
-                }}
-              />
-              <div
-                className="absolute inset-0 border border-blue-400/20 rounded-full"
-                style={{
-                  animation: `pulse ${satellite.duration}s infinite`,
-                }}
-              />
-            </motion.div>
-          </motion.div>
-        );
-      })}
-    </div>
-  );
-}
 
 function HeroSection() {
   const containerVariant = {
@@ -87,15 +25,8 @@ function HeroSection() {
     },
   };
 
-  const satellites = Array.from({ length: 4 }, (_, i) => ({
-    id: i,
-    delay: i * 0.5,
-    duration: 20 + i * 2,
-    size: Math.random() * 3 + 2,
-  }));
-
   return (
-    <div className="relative w-full h-screen bg-gradient-to-b from-slate-900 via-black-900 to-black overflow-hidden font-sans">
+    <div className="relative w-full h-screen bg-black overflow-hidden font-sans">
       {/* Background Stars */}
       <div className="absolute inset-0 z-0">
         {Array.from({ length: 100 }).map((_, i) => (
@@ -135,7 +66,7 @@ function HeroSection() {
               variants={slideUpVariant}
               className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-xl mt-0 md:mt-10"
             >
-              India's First & Largest Private
+              INDIA's First & Largest Private
               <br />
               <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
                 Global PNT Satellite
@@ -155,67 +86,44 @@ function HeroSection() {
                 Coming Soon...
               </span>
             </motion.div>
+
+            {/* PNT Words - Bottom Center */}
+            <motion.div
+              variants={slideUpVariant}
+              className="absolute bottom-8 md:bottom-12 lg:bottom-16 left-0 right-0 flex justify-center items-center px-4 z-20"
+            >
+              <div className="flex items-center gap-2 md:gap-4 lg:gap-6 flex-wrap justify-center">
+                <span className="text-white/80 font-medium text-base md:text-lg lg:text-xl">Positioning</span>
+                <span className="text-white/60 text-base md:text-lg lg:text-xl">•</span>
+                <span className="text-white/80 font-medium text-base md:text-lg lg:text-xl">Navigation</span>
+                <span className="text-white/60 text-base md:text-lg lg:text-xl">•</span>
+                <span className="text-white/80 font-medium text-base md:text-lg lg:text-xl">Timing</span>
+              </div>
+            </motion.div>
           </motion.div>
 
-          {/* RIGHT: Earth + Satellite Orbits */}
+          {/* RIGHT: Clean Video Only */}
           <motion.div
-            className="relative flex-1 w-full max-w-xl"
+            className="relative flex-1 w-full max-w-5xl"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 2 }}
           >
-            <div className="relative w-full aspect-square mx-auto">
-              {/* Satellite Orbits with Different Offsets */}
-              {/* Satellite Orbits with Different Offsets and Alternating Z-index */}
-              <SatelliteOrbit
-                satellites={satellites}
-                rotate={360}
-                offset={{ left: "15%", top: "15%" }} // Top-left
-                className="z-0"
-              />
-              <SatelliteOrbit
-                satellites={satellites}
-                rotate={-360}
-                offset={{ left: "45%", top: "15%" }} // Top-right
-                className="z-20"
-              />
-              <SatelliteOrbit
-                satellites={satellites}
-                rotate={360}
-                offset={{ left: "15%", top: "45%" }} // Bottom-left
-                className="z-20"
-              />
-              <SatelliteOrbit
-                satellites={satellites}
-                rotate={-360}
-                offset={{ left: "45%", top: "45%" }} // Bottom-right
-                className="z-0"
-              />
-
-              {/* Earth */}
-              {/* <img
-                src="/cropped_circle_image.png"
-                alt="Earth"
-                className="relative z-10 w-full h-full object-cover rounded-full shadow-[0_0_120px_rgba(0,0,0,0.8)]"
-              /> */}
-              <EarthVideo />
+            <div className="relative w-full aspect-square mx-auto bg-transparent">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover rounded-full"
+              >
+                <source src="/earth_rotate.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </motion.div>
         </div>
       </div>
-
-      {/* Pulse Animation */}
-      <style jsx>{`
-        @keyframes pulse {
-          0%,
-          100% {
-            opacity: 0.2;
-          }
-          50% {
-            opacity: 0.5;
-          }
-        }
-      `}</style>
     </div>
   );
 }

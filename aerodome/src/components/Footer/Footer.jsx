@@ -16,6 +16,9 @@ function Footer() {
         <Link to="/" className="cursor-pointer">
           Home
         </Link>
+        {/* <Link to="/products/vnss" className="cursor-pointer">
+          VNSS
+        </Link> */}
         {/* <Link to="/technology" className="cursor-pointer">
           Technology
         </Link> */}
@@ -26,9 +29,9 @@ function Footer() {
         <Link to="/team" className="cursor-pointer">
           Team
         </Link>
-        {/* <Link to="/contact-us" className="cursor-pointer">
+        <Link to="/contact-us" className="cursor-pointer">
           Contact
-        </Link> */}
+        </Link>
         {/* <Link to="/contact-us" className="cursor-pointer">
           Privacy Policy
         </Link> */}
@@ -60,7 +63,7 @@ function Footer() {
           <YoutubeIcon className="w-5 h-5" />
         </a> */}
         <a
-          href="https://www.linkedin.com/company/aerodome-technologies/"
+          href="https://www.linkedin.com/company/vyomic"
           target="_blank"
           aria-label="LinkedIn"
           className="hover:text-blue-500 transition-colors flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-[#ffffff0a] rounded-full"
@@ -71,11 +74,11 @@ function Footer() {
 
       {/* Footer Text */}
       <div className="text-white pt-4 text-center text-[12px] sm:text-[14px]">
-        <p>info@aerodome.tech</p>
+        <p>info@vyomic.space</p>
       </div>
       <div className="text-white pt-4 text-center text-[12px] sm:text-[14px]">
         <p className="text-sm text-white/60 text-center mt-4">
-          © {currentYear} <b>AeroDome</b> &nbsp;|&nbsp; All Rights Reserved
+          © {currentYear} <b>VyomIC</b> &nbsp;|&nbsp; All Rights Reserved &nbsp;|&nbsp; An AeroDome Initiative
         </p>
       </div>
     </div>

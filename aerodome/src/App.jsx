@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import NewHome from "./pages/NewHome"
 import Technology from "./pages/Technology";
 import ContactUs from "./pages/ContactUs";
+import Products from "./pages/Products";
+import VNSS from "./pages/VNSS";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Team from "./pages/Team";
@@ -18,9 +20,11 @@ function App() {
         <Routes>
           <Route path="/" element={<NewHome />} />
           {/* <Route path="/technology" element={<Technology />} /> */}
-          {/* <Route path="/contact-us" element={<ContactUs />} /> */}
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/vnss" element={<VNSS />} />
           {/* <Route path="/portfolio" element={<Porfolio />} /> */}
-          <Route path="/team" element={<Team />} />          
+          <Route path="/team" element={<Team />} />
         </Routes>
       </Suspense>
       <Footer />
